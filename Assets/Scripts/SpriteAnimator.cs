@@ -1,8 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class Animator : MonoBehaviour
+public class SpriteAnimator : MonoBehaviour
 {
     [SerializeField] private Sprite[] frames;
     [SerializeField] private float framePeriod;

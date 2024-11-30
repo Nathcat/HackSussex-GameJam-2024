@@ -30,7 +30,7 @@ public class FightController : MonoBehaviour
                 enemyPrefab,
                 enemySpawnPositions[i - 1],
                 new Quaternion()
-            );
+            ).GetComponent<Combatant>();
         }
     }
 

@@ -1,17 +1,39 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-/// <summary>
-/// Represents a base card with no effect
-/// </summary>
-[CreateAssetMenu(fileName = "Card", menuName = "Cards/Card", order = 1)]
-public class Card : ScriptableObject
+public abstract class Card : ScriptableObject
 {
     // Attributes
-    public int timeCost;
+    [SerializeField] private int timeCost;
 
     // Display info
-    public Sprite background;
-    public Sprite icon;
-    public string description;
+    [SerializeField] private Sprite background;
+    [SerializeField] private Sprite icon;
+    [SerializeField] private string title;
+    [SerializeField] private string description;
+
+    public int getTimeCost()
+    {
+        return timeCost;
+    }
+
+    public Sprite getBackground()
+    {
+        return background;
+    }
+
+    public Sprite getIcon()
+    {
+        return icon;
+    }
+
+    public string getTitle()
+    {
+        return title;
+    }
+
+    public string getDescription()
+    {
+        return description;
+    }
 }

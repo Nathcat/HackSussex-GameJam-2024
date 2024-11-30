@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -55,6 +56,6 @@ public class Combatant : MonoBehaviour
     /// </summary>
     /// <returns>The selected card</returns>
     virtual public Card chooseCard() {
-        Debug.LogError("Not implemented!");
+        throw new NotImplementedException();
     }
 }

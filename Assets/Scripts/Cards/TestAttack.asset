@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: befeff70be0f74144ac3839f9f9c2a05, type: 3}
+  m_Name: TestAttack
+  m_EditorClassIdentifier: 
+  timeCost: 1
+  background: {fileID: 21300000, guid: e24458cafcbde80438cef2d568eb1a0f, type: 3}
+  icon: {fileID: 0}
+  title: Test Attack
+  description: Channels the power of placeholders to hack the target!
+  attackDamage: 1

@@ -4,4 +4,9 @@ using UnityEngine;
 public class DefendCard : Card
 {
     [SerializeField] private int defencePoints;
+
+    public override void Play(Combatant combatant)
+    {
+        throw new System.NotImplementedException();
+    }
 }

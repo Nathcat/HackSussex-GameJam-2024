@@ -16,10 +16,10 @@ public class CardRenderer : MonoBehaviour
     {
         this.card = card;
 
-        references.background.sprite = card.getBackground();
-        references.title.text = card.getTitle();
-        references.description.text = card.getDescription();
-        references.cost.text = card.getTimeCost().ToString();
+        references.background.sprite = card.GetBackground();
+        references.title.text = card.GetTitle();
+        references.description.text = card.GetDescription();
+        references.cost.text = card.GetTimeCost().ToString();
     }
 
     [Serializable]

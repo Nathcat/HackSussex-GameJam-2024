@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using UnityEngine;
 
 public abstract class Card : ScriptableObject
@@ -12,27 +11,29 @@ public abstract class Card : ScriptableObject
     [SerializeField] private string title;
     [SerializeField] private string description;
 
-    public int getTimeCost()
+    public abstract void Play(Combatant combatant);
+
+    public int GetTimeCost()
     {
         return timeCost;
     }
 
-    public Sprite getBackground()
+    public Sprite GetBackground()
     {
         return background;
     }
 
-    public Sprite getIcon()
+    public Sprite GetIcon()
     {
         return icon;
     }
 
-    public string getTitle()
+    public string GetTitle()
     {
         return title;
     }
 
-    public string getDescription()
+    public string GetDescription()
     {
         return description;
     }

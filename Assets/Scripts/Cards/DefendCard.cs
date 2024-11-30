@@ -10,8 +10,5 @@ public class DefendCard : Card
         combatant.updateDefence(defencePoints);
     }
 
-    public override bool TargetSelf()
-    {
-        return true;
-    }
+
 }

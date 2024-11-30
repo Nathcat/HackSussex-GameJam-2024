@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeCost: 1
   background: {fileID: 21300000, guid: e24458cafcbde80438cef2d568eb1a0f, type: 3}
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: a241a30c4bcdaae4aa21d9f4fdd04b52, type: 3}
   title: Test Defend
   description: This is a test defence card!
   defencePoints: 5

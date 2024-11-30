@@ -2,17 +2,21 @@ using UnityEngine;
 
 public class SpriteAnimator : MonoBehaviour
 {
-    [SerializeField] private Sprite[] frames;
+    [SerializeField] private Sprite[] aliveFrames;
+    [SerializeField] private Sprite[] deadFrames;
     [SerializeField] private float framePeriod;
 
     private SpriteRenderer spriteRenderer;
     private float frameTime = 0;
     private int frameIndex = 0;
 
+    private Combatant combatant;
+
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
-        spriteRenderer.sprite = frames[0];
+        combatant = GetComponent<Combatant>();
+        spriteRenderer.sprite = aliveFrames[0];
     }
 
     void Update()
@@ -22,8 +26,8 @@ public class SpriteAnimator : MonoBehaviour
         {
             frameIndex++;
             frameTime = 0;
-            if (frameIndex >= frames.Length) frameIndex = 0;
-            spriteRenderer.sprite = frames[frameIndex];
+            if (frameIndex >= aliveFrames.Length) frameIndex = 0;
+            spriteRenderer.sprite = (combatant.getHealth() <= 0 ? deadFrames : aliveFrames)[frameIndex];
         }
     }
 }

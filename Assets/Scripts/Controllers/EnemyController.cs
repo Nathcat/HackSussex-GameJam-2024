@@ -11,4 +11,10 @@ public class EnemyController : Combatant
 
         // Do stuff here ...
     }
+
+    override public void endTurn() {
+        // Do UI stuff here ...
+
+        base.endTurn();
+    }
 }

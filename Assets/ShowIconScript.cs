@@ -16,6 +16,6 @@ public class ShowIconScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        shownIcon.sprite = combatant.getChosenCard().GetIcon();
+        //shownIcon.sprite = combatant.getChosenCard().GetIcon();
     }
 }

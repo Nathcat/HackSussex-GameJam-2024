@@ -5,6 +5,8 @@ using UnityEngine;
 public class EnemyController : Combatant
 {
     override public void startTurn() {
+        base.startTurn();
+        
         base.chosenCard = base.getDeck()[
             Random.Range(0, base.getDeck().Length - 1)
         ];

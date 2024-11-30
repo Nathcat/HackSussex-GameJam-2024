@@ -5,6 +5,8 @@ using UnityEngine;
 public class PlayerController : Combatant
 {
     override public void startTurn() {
+        base.startTurn();
+        
         // Do UI stuff here ...
     }
 

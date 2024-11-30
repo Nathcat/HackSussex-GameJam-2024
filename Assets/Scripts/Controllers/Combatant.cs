@@ -69,7 +69,7 @@ public class Combatant : MonoBehaviour
     }
 
     virtual public void startTurn() {
-        throw new NotImplementedException();
+        defence = 0;
     }
 
     virtual public void endTurn() {

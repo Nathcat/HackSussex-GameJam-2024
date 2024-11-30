@@ -60,4 +60,13 @@ public class Combatant : MonoBehaviour
     virtual public void chooseCard() {
         throw new NotImplementedException();
     }
+
+    virtual public void startTurn() {
+        throw new NotImplementedException();
+    }
+
+    virtual public void endTurn() {
+        FightController c = GameObject.Find("FightController").GetComponent<FightController>();
+        c.nextTurn();
+    }
 }

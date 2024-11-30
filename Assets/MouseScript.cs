@@ -32,15 +32,25 @@ public class MouseScript : MonoBehaviour
                 {
                     card = hit.collider.gameObject;
                     card_held = true;
+                    card_origin = card.transform.position;
                 }
                 if (card_held) 
                 { 
                     //dont
                 }
             }
-            if (hit.collider.gameObject.CompareTag("combatant")) 
-            { 
+            if (hit.collider.gameObject.CompareTag("combatant"))
+            {
                 //do function
+            }
+            else 
+            {
+                if (card_held)
+                {
+                    card.transform.position = card_origin;
+                    card_held = false;
+                }
+                
             }
         }
         if (card_held) 

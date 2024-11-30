@@ -1,25 +1,18 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class EnergyBarScript : MonoBehaviour
+public class EnergyBarController : MonoBehaviour
 {
+    [SerializeField] private Slider energySlider;
+    [SerializeField] private Combatant combatant;
 
-    public Slider slider;
-
-    void ChangeMaxEnergy(int energy){
-            slider.maxValue = energy;
-            slider.value = energy;
-    }
-
-    void SetMaxEnergy(){
-        slider.value = slider.maxValue;
-    }
-
-    void SetEnergy(int energy)
+    private void Start()
     {
-        slider.value = energy;
+        energySlider.maxValue = combatant.getEnergy();
     }
 
+    private void Update()
+    {
+        energySlider.value = combatant.getEnergy();
+    }
 }

@@ -18,6 +18,8 @@ public class CardRenderer : MonoBehaviour
 
         references.background.sprite = card.getBackground();
         references.title.text = card.getTitle();
+        references.description.text = card.getDescription();
+        references.cost.text = card.getTimeCost().ToString();
     }
 
     [Serializable]
@@ -26,5 +28,6 @@ public class CardRenderer : MonoBehaviour
         public SpriteRenderer background;
         public TextMeshPro title;
         public TextMeshPro description;
+        public TextMeshPro cost;
     }
 }

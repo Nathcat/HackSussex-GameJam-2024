@@ -12,6 +12,7 @@ public class Combatant : MonoBehaviour
     private Card[] deck;
     private int health;
     private int energy;
+    public Card chosenCard;
 
     /// <summary>
     /// Create a new deck for this combatant, erasing the old deck if one existed
@@ -52,10 +53,20 @@ public class Combatant : MonoBehaviour
     }
 
     /// <summary>
-    /// Choose a card from this combatant's deck
+    /// Choose a card from this combatant's deck. Should set chosenCard
     /// </summary>
     /// <returns>The selected card</returns>
-    virtual public Card chooseCard() {
+    /// <exception cref="DeckIsEmptyException">Thrown if the deck is empty</exception> 
+    virtual public void chooseCard() {
         throw new NotImplementedException();
+    }
+
+    virtual public void startTurn() {
+        throw new NotImplementedException();
+    }
+
+    virtual public void endTurn() {
+        FightController c = GameObject.Find("FightController").GetComponent<FightController>();
+        c.nextTurn();
     }
 }

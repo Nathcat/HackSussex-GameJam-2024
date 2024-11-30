@@ -4,15 +4,10 @@ using UnityEngine;
 
 public class PlayerController : Combatant
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    override public void chooseCard() {
+        // This function does nothing!
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        // Will be handled by the user dragging and dropping a card
+        // onto another combatant
     }
 }

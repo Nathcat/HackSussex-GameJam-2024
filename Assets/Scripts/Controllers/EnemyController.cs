@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class EnemyController : Combatant
 {
-    // Start is called before the first frame update
-    void Start()
-    {
+    /// <summary>
+    /// Choose a card randomly from the deck
+    /// </summary>
+    /// <returns>A randomly chosen card from the deck</returns>
+    /// <exception cref="DeckIsEmptyException">Thrown when the deck is empty</exception>
+    override public void chooseCard() {
+        if (base.getDeck().Length == 0) {
+            throw new DeckIsEmptyException();
+        }
         
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        base.chosenCard = base.getDeck()[
+            Random.Range(0, base.getDeck().Length - 1)
+        ];
     }
 }

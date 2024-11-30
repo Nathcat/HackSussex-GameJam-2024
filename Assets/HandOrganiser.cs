@@ -7,8 +7,7 @@ public class HandOrganiser : MonoBehaviour
     [SerializeField] private float width;
     [SerializeField] private float max_count;
     [SerializeField] private float start_pos;
-    [SerializeField] private List<GameObject> funky_store = new List<GameObject>();
-
+    [SerializeField] public List<GameObject> funky_store = new List<GameObject>();
     public void Generate(List<Card> cards) 
     {
         funky_store = new List<GameObject>();
@@ -61,41 +60,46 @@ public class HandOrganiser : MonoBehaviour
         }
     }
 
-    public void sort(List<GameObject> cards)
+    public void sort()
     {
-        int size = cards.Count;
+        funky_store.Clear();
+        foreach (Transform child in transform)
+        {         
+            funky_store.Add(child.gameObject);
+        }
+        int size = funky_store.Count;
         print(max_count);
 
         if ((size % 2) == 0)
         {
             start_pos = 0 - ((size / 2) * width);
-            for (int index = 0; index < cards.Count; index++)
+            for (int index = 0; index < funky_store.Count; index++)
             {
-                cards[index].transform.position = new Vector3((start_pos + (width / 2)), -3.38f, 1f);
+                funky_store[index].transform.position = new Vector3((start_pos + (width / 2)), -3.38f, 1f);
                 start_pos = start_pos + width;
-                funky_store.Add(cards[index]);
+
             }
         }
         else if (!((size % 2) == 0))
         {
-            cards[0].transform.position = new Vector3(0.0f, -3.38f, 1f);
-            funky_store.Add(cards[0]);
-            cards.RemoveAt(0);
+            funky_store[0].transform.position = new Vector3(0.0f, -3.38f, 1f);
+            funky_store.Add(funky_store[0]);
+            funky_store.RemoveAt(0);
             start_pos = 0 - (((size / 2) * width) + (width / 2));
-            for (int index = 0; index < cards.Count / 2; index++)
+            for (int index = 0; index < funky_store.Count / 2; index++)
             {
 
-                cards[index].transform.position = new Vector3((start_pos + (width / 2)), -3.38f, 1f);
+                funky_store[index].transform.position = new Vector3((start_pos + (width / 2)), -3.38f, 1f);
                 start_pos = start_pos + width;
-                funky_store.Add(cards[index]);
+
             }
 
             start_pos = 0 + (width / 2);
-            for (int index = ((cards.Count / 2)); index < cards.Count; index++)
+            for (int index = ((funky_store.Count / 2)); index < funky_store.Count; index++)
             {
-                cards[index].transform.position = new Vector3((start_pos + (width / 2)), -3.38f, 1f);
+                funky_store[index].transform.position = new Vector3((start_pos + (width / 2)), -3.38f, 1f);
                 start_pos = start_pos + width;
-                funky_store.Add(cards[index]);
+
             }
         }
     }

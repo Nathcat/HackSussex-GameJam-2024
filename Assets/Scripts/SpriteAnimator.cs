@@ -7,10 +7,10 @@ public class SpriteAnimator : MonoBehaviour
     [SerializeField] private float framePeriod;
 
     private SpriteRenderer spriteRenderer;
+    private Combatant combatant;
     private float frameTime = 0;
     private int frameIndex = 0;
 
-    private Combatant combatant;
 
     void Start()
     {
@@ -21,13 +21,15 @@ public class SpriteAnimator : MonoBehaviour
 
     void Update()
     {
+        Sprite[] sprites = (combatant != null && combatant.getHealth() <= 0 ? deadFrames : aliveFrames);
+
         frameTime += Time.deltaTime;
         if (frameTime >= framePeriod)
         {
             frameIndex++;
             frameTime = 0;
-            if (frameIndex >= aliveFrames.Length) frameIndex = 0;
-            spriteRenderer.sprite = (combatant.getHealth() <= 0 ? deadFrames : aliveFrames)[frameIndex];
+            if (frameIndex >= sprites.Length) frameIndex = 0;
+            spriteRenderer.sprite = sprites[frameIndex];
         }
     }
 }

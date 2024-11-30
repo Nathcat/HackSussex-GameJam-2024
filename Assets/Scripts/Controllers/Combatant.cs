@@ -55,6 +55,7 @@ public class Combatant : MonoBehaviour
     /// Choose a card from this combatant's deck
     /// </summary>
     /// <returns>The selected card</returns>
+    /// <exception cref="DeckIsEmptyException">Thrown if the deck is empty</exception> 
     virtual public Card chooseCard() {
         throw new NotImplementedException();
     }

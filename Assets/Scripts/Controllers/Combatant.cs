@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 /// <summary>
 /// Represents a combatant in a fight.
@@ -89,9 +90,21 @@ public class Combatant : MonoBehaviour
     virtual public void endTurn() {
         Debug.Log(name + " has ended their turn!");
 
-        if (base.getHealth() == 0) {
-            base.fightController.combatants.RemoveAt(base.fightController.currentCombatant);
+        if (getHealth() == 0) {
+            fightController.combatants.RemoveAt(fightController.currentCombatant);
             Debug.Log(name + " is dead!");
+
+            if (fightController.currentCombatant == 0) {
+                SceneManager.LoadScene("GameOver");
+            }
+            else {
+                if (fightController.combatants.Count == 0 && fightController.combatants[0].getHealth() != 0) {
+                    SceneManager.LoadScene("GraphScene");
+                }
+                else {
+                    SceneManager.LoadScene("GameOver");
+                }
+            }
         }
         
         chosenCard = null;

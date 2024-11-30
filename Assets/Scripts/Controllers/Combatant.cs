@@ -12,6 +12,7 @@ public class Combatant : MonoBehaviour
     private Card[] deck;
     private int health;
     private int energy;
+    private int defence;
     public Card chosenCard;
 
     /// <summary>
@@ -33,7 +34,21 @@ public class Combatant : MonoBehaviour
     /// Change the value of health by delta
     /// </summary>
     /// <param name="delta">The value to change this combatant's health by, can be +ve or -ve</param>
-    public void updateHealth(int delta) { health += delta; }
+    public void updateHealth(int delta) { 
+        if (delta < 0) {
+            defence += delta;
+            
+            if (defence < 0) {
+                health += defence;
+                defence = 0;
+            }
+        }
+        else {
+            health += delta;
+        }
+    }
+
+    public void updateDefence(int delta) { defence += delta; }
 
     public int getEnergy() { return energy; }
 

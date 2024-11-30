@@ -48,6 +48,7 @@ public class Combatant : MonoBehaviour
         }
     }
 
+    public int getDefence() { return defence; }
     public void updateDefence(int delta) { defence += delta; }
 
     public int getEnergy() { return energy; }

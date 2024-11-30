@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeCost: 1
   background: {fileID: 21300000, guid: e24458cafcbde80438cef2d568eb1a0f, type: 3}
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 7ca364a9aeb86ed41b586332c4f8b624, type: 3}
   title: Test Attack
   description: Channels the power of placeholders to hack the target!
   attackDamage: 1

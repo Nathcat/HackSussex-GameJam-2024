@@ -100,8 +100,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc8080274a3471845b089b7758ee6ad0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  aliveFrames: []
-  deadFrames: []
+  aliveFrames:
+  - {fileID: 21300000, guid: 544c07f4f34f10c478bd3e8d7d39dbec, type: 3}
+  - {fileID: 21300000, guid: 458ffdbbe9fbe5a48b86971ac4e60dba, type: 3}
+  deadFrames:
+  - {fileID: 21300000, guid: 65b99226670401745895a14708f5b3d7, type: 3}
+  - {fileID: 21300000, guid: 3138e477cbc50dc4a827618356f8c0d8, type: 3}
+  - {fileID: 21300000, guid: b22ea615288213542aaef5c08d1f393a, type: 3}
   framePeriod: 0.1
 --- !u!114 &4567299745389375155
 MonoBehaviour:

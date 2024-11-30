@@ -198,50 +198,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1466053642529991112, guid: af6588187f7dfba478340aecc3c27d3f, type: 3}
-      propertyPath: deadFrames.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1466053642529991112, guid: af6588187f7dfba478340aecc3c27d3f, type: 3}
-      propertyPath: aliveFrames.Array.size
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 1466053642529991112, guid: af6588187f7dfba478340aecc3c27d3f, type: 3}
-      propertyPath: deadFrames.Array.data[0]
-      value: 
-      objectReference: {fileID: 21300000, guid: 6264e3ddfe5c9c042ab41daf7bca0f0a, type: 3}
-    - target: {fileID: 1466053642529991112, guid: af6588187f7dfba478340aecc3c27d3f, type: 3}
-      propertyPath: aliveFrames.Array.data[0]
-      value: 
-      objectReference: {fileID: 21300000, guid: 5e91e187dbecd1a44bc6218e1d17cf14, type: 3}
-    - target: {fileID: 1466053642529991112, guid: af6588187f7dfba478340aecc3c27d3f, type: 3}
-      propertyPath: aliveFrames.Array.data[1]
-      value: 
-      objectReference: {fileID: 21300000, guid: 274e6552c73de7d4cb697c2597dd158f, type: 3}
-    - target: {fileID: 1466053642529991112, guid: af6588187f7dfba478340aecc3c27d3f, type: 3}
-      propertyPath: aliveFrames.Array.data[2]
-      value: 
-      objectReference: {fileID: 21300000, guid: 2b1d674168fae7948a156fd20e0416cb, type: 3}
-    - target: {fileID: 1466053642529991112, guid: af6588187f7dfba478340aecc3c27d3f, type: 3}
-      propertyPath: aliveFrames.Array.data[3]
-      value: 
-      objectReference: {fileID: 21300000, guid: c48750688959a6c4795ab07322b690d2, type: 3}
-    - target: {fileID: 1466053642529991112, guid: af6588187f7dfba478340aecc3c27d3f, type: 3}
-      propertyPath: aliveFrames.Array.data[4]
-      value: 
-      objectReference: {fileID: 21300000, guid: 7912830b26a2bc743b523aa75105ba53, type: 3}
-    - target: {fileID: 1466053642529991112, guid: af6588187f7dfba478340aecc3c27d3f, type: 3}
-      propertyPath: aliveFrames.Array.data[5]
-      value: 
-      objectReference: {fileID: 21300000, guid: 06a488b6927a8fb46af29c40bebb7752, type: 3}
-    - target: {fileID: 1466053642529991112, guid: af6588187f7dfba478340aecc3c27d3f, type: 3}
-      propertyPath: aliveFrames.Array.data[6]
-      value: 
-      objectReference: {fileID: 21300000, guid: 441e600408ad6d9418793b4781f6ee28, type: 3}
-    - target: {fileID: 1466053642529991112, guid: af6588187f7dfba478340aecc3c27d3f, type: 3}
-      propertyPath: aliveFrames.Array.data[7]
-      value: 
-      objectReference: {fileID: 21300000, guid: b4bd35dc3b992a846828c0e6693ba19d, type: 3}
     - target: {fileID: 1882085437046227202, guid: af6588187f7dfba478340aecc3c27d3f, type: 3}
       propertyPath: m_Name
       value: Player

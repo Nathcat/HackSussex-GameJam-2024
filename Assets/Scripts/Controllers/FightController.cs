@@ -7,7 +7,7 @@ public class FightController : MonoBehaviour
     public Card[] playerCardSet;
     public Card[] enemyCardSet;
 
-    public Combatant[] combatants;
+    public List<Combatant> combatants;
     public int currentCombatant = 0;
 
     public GameObject enemyPrefab;
@@ -15,16 +15,16 @@ public class FightController : MonoBehaviour
 
     public void Start() {
         int enemyCount = Random.Range(1, 3);
-        combatants = new Combatant[enemyCount + 1];
+        combatants = new List<Combatant>();
 
-        combatants[0] = FindObjectOfType<PlayerController>();
+        combatants.Add(FindObjectOfType<PlayerController>());
 
         for (int i = 1; i < enemyCount + 1; i++) {
-            combatants[i] = Instantiate(
+            combatants.Add(Instantiate(
                 enemyPrefab,
                 enemySpawnPositions[i - 1],
                 new Quaternion()
-            ).GetComponent<Combatant>();
+            ).GetComponent<Combatant>());
         }
 
         playTurn();
@@ -35,7 +35,7 @@ public class FightController : MonoBehaviour
     }
 
     public void nextTurn() {
-        currentCombatant = (currentCombatant + 1) % combatants.Length; 
+        currentCombatant = (currentCombatant + 1) % combatants.Count; 
         
         playTurn();
     }

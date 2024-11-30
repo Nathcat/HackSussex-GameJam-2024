@@ -41,6 +41,8 @@ public class Combatant : MonoBehaviour
     /// <returns>An array of cards representing this combatant's deck</returns>
     public Card[] getDeck() { return deck.ToArray(); }
 
+    public Card getChosenCard() { return chosenCard; }
+
     public int getHealth() { return health < 0 ? 0 : health; }
 
     /// <summary>

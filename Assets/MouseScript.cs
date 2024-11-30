@@ -15,7 +15,7 @@ public class MouseScript : MonoBehaviour
     void Update()
     {
         hand = GameObject.Find("FightController");
-        if (hand.GetComponent<FightController>().combatants.Length == 0) 
+        if (hand.GetComponent<FightController>().combatants.Count == 0) 
         {
             card.transform.position = card_origin;
             card_held = false;
@@ -26,7 +26,7 @@ public class MouseScript : MonoBehaviour
         dir =  Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 1f)) - Camera.main.transform.position;
         RaycastHit hit;
 
-       if (Input.GetMouseButtonDown(0) && Physics.Raycast(Camera.main.transform.position, dir, out hit, Mathf.Infinity) && (hand.GetComponent<FightController>().combatants.Length != 0)
+       if (Input.GetMouseButtonDown(0) && Physics.Raycast(Camera.main.transform.position, dir, out hit, Mathf.Infinity) && (hand.GetComponent<FightController>().combatants.Count != 0)
 )
         {
             if (hit.collider.gameObject.CompareTag("combatant"))
@@ -37,6 +37,7 @@ public class MouseScript : MonoBehaviour
                 
                 card_held = false;
                 card = null;
+                hand.GetComponent<HandOrganiser>().funky_store.Remove(card);
                 hand.GetComponent<HandOrganiser>().sort();
             }
             else if (hit.collider.gameObject.CompareTag("card") && (!card_held)) 

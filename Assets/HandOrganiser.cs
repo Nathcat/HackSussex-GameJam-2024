@@ -7,7 +7,7 @@ public class HandOrganiser : MonoBehaviour
     [SerializeField] private float width;
     [SerializeField] private float max_count;
     [SerializeField] private float start_pos;
-    [SerializeField] private List<GameObject> funky_store = new List<GameObject>();
+    [SerializeField] public List<GameObject> funky_store = new List<GameObject>();
     [SerializeField] private List<Card> hold_gen = new List<Card>();
     public void Generate(List<Card> cards) 
     {
@@ -61,8 +61,7 @@ public class HandOrganiser : MonoBehaviour
 
     public void sort()
     {
-        funky_store.Clear();
-        funky_store.Clear();
+        funky_store = new List<GameObject>();
         foreach (Transform child in transform)
         {
             funky_store.Add(child.gameObject);

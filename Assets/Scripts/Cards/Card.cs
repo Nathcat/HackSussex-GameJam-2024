@@ -37,4 +37,6 @@ public abstract class Card : ScriptableObject
     {
         return description;
     }
+
+    public abstract bool TargetSelf();
 }

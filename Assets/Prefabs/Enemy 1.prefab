@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 6643747843538246174}
   - component: {fileID: 3361339943031684175}
   - component: {fileID: 4567299745389375155}
+  - component: {fileID: -1223651527130026320}
   m_Layer: 0
   m_Name: Enemy 1
-  m_TagString: Untagged
+  m_TagString: combatant
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -114,4 +115,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e61939b285057fa4286521476edcd3f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 0
+  energy: 0
+  defence: 0
   chosenCard: {fileID: 0}
+  fightController: {fileID: 0}
+--- !u!65 &-1223651527130026320
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6470072097230172647}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.32, y: 0.32, z: 0.2}
+  m_Center: {x: 0, y: 0, z: 0}

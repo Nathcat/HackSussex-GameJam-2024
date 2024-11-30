@@ -9,4 +9,9 @@ public class AttackCard : Card
     {
         combatant.updateHealth(-attackDamage);
     }
+
+    public override bool TargetSelf()
+    {
+        return false;
+    }
 }

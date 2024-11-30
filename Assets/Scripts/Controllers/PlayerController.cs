@@ -1,17 +1,18 @@
-using System.Collections;
-using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class PlayerController : Combatant
 {
+    [SerializeField] private HandOrganiser handPrefab;
+
     override public void startTurn() {
         base.startTurn();
 
-        if (base.getDeck().Length == 0) {
+        if (getDeck().Length == 0) {
             base.createDeck(fightController.playerCardSet, 7);
         }
 
-        // Do UI stuff here ...
+        Instantiate(handPrefab).Generate(getDeck().ToList());
     }
 
     override public void endTurn() {

@@ -10,11 +10,11 @@ using UnityEngine;
 public class Combatant : MonoBehaviour
 {
     private List<Card> deck = new List<Card>();
-    private int health;
-    private int energy;
-    private int defence;
-    public Card chosenCard;
-    public FightController fightController;
+    [SerializeField] private int health;
+    [SerializeField] private int energy;
+    [SerializeField] private int defence;
+    [HideInInspector] public Card chosenCard;
+    [HideInInspector] public FightController fightController;
 
     public void Awake() {
         fightController = FindObjectOfType<FightController>();

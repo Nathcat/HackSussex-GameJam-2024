@@ -52,15 +52,6 @@ public class Combatant : MonoBehaviour
         Debug.LogError("Not implemented!");
     }
 
-    /// <summary>
-    /// Choose a card from this combatant's deck. Should set chosenCard
-    /// </summary>
-    /// <returns>The selected card</returns>
-    /// <exception cref="DeckIsEmptyException">Thrown if the deck is empty</exception> 
-    virtual public void chooseCard() {
-        throw new NotImplementedException();
-    }
-
     virtual public void startTurn() {
         throw new NotImplementedException();
     }

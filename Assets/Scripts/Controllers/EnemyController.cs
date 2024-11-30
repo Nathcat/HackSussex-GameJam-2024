@@ -6,7 +6,7 @@ public class EnemyController : Combatant
 {
     override public void startTurn() {
         base.chosenCard = base.getDeck()[
-            Random.Range(0, base.getDeck().Length - 1);
+            Random.Range(0, base.getDeck().Length - 1)
         ];
 
         // Do stuff here ...

@@ -94,13 +94,14 @@ public class Combatant : MonoBehaviour
 
         if (getHealth() == 0) {
             fightController.combatants.RemoveAt(fightController.currentCombatant);
+            gameObject.tag = null;
             Debug.Log(name + " is dead!");
 
             if (fightController.currentCombatant == 0) {
                 SceneManager.LoadScene("GameOver");
             }
             else {
-                if (fightController.combatants.Count == 0 && fightController.combatants[0].getHealth() != 0) {
+                if (fightController.combatants.Count == 1 && fightController.combatants[0].getHealth() != 0) {
                     SceneManager.LoadScene("GraphScene");
                 }
                 else {

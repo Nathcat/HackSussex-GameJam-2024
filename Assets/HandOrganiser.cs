@@ -7,7 +7,6 @@ using UnityEngine;
 
 public class HandOrganiser : MonoBehaviour
 {
-    [SerializeField] private float offset = 0f;
     [SerializeField] private GameObject card_prefab;
     [SerializeField] private float width;
     [SerializeField] private float max_count;

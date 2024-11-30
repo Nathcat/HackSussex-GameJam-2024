@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.XR;
 
 public class MouseScript : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class MouseScript : MonoBehaviour
     [SerializeField] private Vector3 card_origin;
     [SerializeField] private GameObject card = null;
     [SerializeField] private Vector3 mouse_position;
+    [SerializeField] GameObject hand = null;
 
     // Update is called once per frame
     void Update()
@@ -20,6 +22,13 @@ public class MouseScript : MonoBehaviour
             if (hit.collider.gameObject.CompareTag("combatant"))
             {
                 card.GetComponent<CardRenderer>().GetCard().Play(hit.collider.gameObject.GetComponent<Combatant>());
+                hand = GameObject.Find("Hand(Clone)");
+                Destroy(card);
+                
+                card_held = false;
+                card = null;
+                hand.GetComponent<HandOrganiser>().funky_store.Clear();
+                hand.GetComponent<HandOrganiser>().sort();
             }
             else if (hit.collider.gameObject.CompareTag("card") && (!card_held)) 
             {
@@ -50,5 +59,6 @@ public class MouseScript : MonoBehaviour
             card.transform.position = mouse_position;
         }
     }
+
 
 }

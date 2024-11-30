@@ -14,7 +14,7 @@ public class EnemyController : Combatant
             throw new DeckIsEmptyException();
         }
         
-        base.chosenCard.getDeck()[
+        base.chosenCard = base.getDeck()[
             Random.Range(0, base.getDeck().Length - 1)
         ];
     }

@@ -40,7 +40,7 @@ public class Combatant : MonoBehaviour
     /// <returns>An array of cards representing this combatant's deck</returns>
     public Card[] getDeck() { return deck.ToArray(); }
 
-    public int getHealth() { return health; }
+    public int getHealth() { return health < 0 ? 0 : health; }
 
     /// <summary>
     /// Change the value of health by delta
@@ -88,6 +88,11 @@ public class Combatant : MonoBehaviour
 
     virtual public void endTurn() {
         Debug.Log(name + " has ended their turn!");
+
+        if (base.getHealth() == 0) {
+            base.fightController.combatants.RemoveAt(base.fightController.currentCombatant);
+            Debug.Log(name + " is dead!");
+        }
         
         chosenCard = null;
         fightController.nextTurn();

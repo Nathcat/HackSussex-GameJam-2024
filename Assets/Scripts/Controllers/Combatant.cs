@@ -9,24 +9,36 @@ using UnityEngine;
 /// </summary>
 public class Combatant : MonoBehaviour
 {
-    private Card[] deck;
+    private List<Card> deck = new List<Card>();
     private int health;
     private int energy;
     private int defence;
     public Card chosenCard;
+    public FightController fightController;
+
+    public void Awake() {
+        fightController = FindObjectOfType<FightController>();
+    }
 
     /// <summary>
     /// Create a new deck for this combatant, erasing the old deck if one existed
     /// </summary>
-    public void createDeck() {
-        Debug.LogError("Not implemented!");
+    virtual public void createDeck(Card[] set, int count) {
+        deck = new List<Card>();
+        
+        for (int i = 0; i < count; i++) {
+
+            deck.Add(
+                set[UnityEngine.Random.Range(0, set.Length)]
+            );
+        }
     }
 
     /// <summary>
     /// Get the deck of this combatant
     /// </summary>
     /// <returns>An array of cards representing this combatant's deck</returns>
-    public Card[] getDeck() { return deck; }
+    public Card[] getDeck() { return deck.ToArray(); }
 
     public int getHealth() { return health; }
 
@@ -70,10 +82,14 @@ public class Combatant : MonoBehaviour
 
     virtual public void startTurn() {
         defence = 0;
+
+        Debug.Log(name + " has started their turn!");
     }
 
     virtual public void endTurn() {
-        FightController c = GameObject.Find("FightController").GetComponent<FightController>();
-        c.nextTurn();
+        Debug.Log(name + " has ended their turn!");
+        
+        chosenCard = null;
+        fightController.nextTurn();
     }
 }

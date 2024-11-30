@@ -25,6 +25,8 @@ public class FightController : MonoBehaviour
             new Quaternion() 
         ).GetComponent<Combatant>();
 
+
+
         for (int i = 1; i < enemyCount + 1; i++) {
             combatants[i] = Instantiate(
                 enemyPrefab,
@@ -32,6 +34,8 @@ public class FightController : MonoBehaviour
                 new Quaternion()
             ).GetComponent<Combatant>();
         }
+
+        playTurn();
     }
 
     public void playTurn() {
@@ -40,5 +44,11 @@ public class FightController : MonoBehaviour
 
     public void nextTurn() {
         currentCombatant = (currentCombatant + 1) % combatants.Length; 
+        
+        playTurn();
+    }
+
+    public void endPlayerTurn() {
+        combatants[0].endTurn();
     }
 }

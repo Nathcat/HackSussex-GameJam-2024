@@ -1,7 +1,7 @@
 using System;
 
 public class DeckIsEmptyException : Exception {
-    public DeckIsEmptyException(string msg) {
-        base(msg);
+    public DeckIsEmptyException() : base("Combatant's deck is empty!") {
+        
     }
 }

@@ -7,6 +7,6 @@ public class AttackCard : Card
 
     public override void Play(Combatant combatant)
     {
-        throw new System.NotImplementedException();
+        combatant.updateHealth(-attackDamage);
     }
 }

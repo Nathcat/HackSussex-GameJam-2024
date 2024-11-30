@@ -7,6 +7,6 @@ public class DefendCard : Card
 
     public override void Play(Combatant combatant)
     {
-        throw new System.NotImplementedException();
+        combatant.updateDefence(defencePoints);
     }
 }

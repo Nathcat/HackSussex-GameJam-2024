@@ -12,6 +12,8 @@ public class CardRenderer : MonoBehaviour
         Render(card);
     }
 
+    public Card GetCard() { return card; }
+
     public void Render(Card card)
     {
         this.card = card;

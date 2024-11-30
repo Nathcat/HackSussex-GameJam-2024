@@ -19,7 +19,7 @@ public class MouseScript : MonoBehaviour
         {
             if (hit.collider.gameObject.CompareTag("combatant"))
             {
-                //do function
+                card.GetComponent<CardRenderer>().GetCard().Play(hit.collider.gameObject.GetComponent<Combatant>());
             }
             else if (hit.collider.gameObject.CompareTag("card") && (!card_held)) 
             {

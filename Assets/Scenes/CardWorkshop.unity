@@ -147,7 +147,7 @@ Transform:
   m_GameObject: {fileID: 83446420}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.0944, y: 0.2569, z: 0}
+  m_LocalPosition: {x: -0.0944, y: 0.2569, z: -0.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -179,7 +179,7 @@ Transform:
   m_GameObject: {fileID: 120419750}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.272, y: 0.2569, z: 0}
+  m_LocalPosition: {x: -0.272, y: 0.2569, z: -0.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -213,7 +213,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 498819758}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -506,6 +506,7 @@ GameObject:
   - component: {fileID: 607367399}
   - component: {fileID: 607367398}
   - component: {fileID: 607367400}
+  - component: {fileID: 607367401}
   m_Layer: 0
   m_Name: Card
   m_TagString: Untagged
@@ -602,6 +603,24 @@ MonoBehaviour:
     title: {fileID: 1549516266}
     description: {fileID: 1481057103}
     cost: {fileID: 498819760}
+--- !u!114 &607367401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 607367397}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc8080274a3471845b089b7758ee6ad0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  frames:
+  - {fileID: 21300000, guid: c5a67316c4d6c1c479551d3f875177b3, type: 3}
+  - {fileID: 21300000, guid: eb836bb160d1daf4ab6cc04bbce14f12, type: 3}
+  - {fileID: 21300000, guid: bfa8c361595423c458f26e32bf3182f6, type: 3}
+  - {fileID: 21300000, guid: ee3e00a36dfaaa243831038c16b1c0bc, type: 3}
+  framePeriod: 0.1
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -794,7 +813,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1215375573}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

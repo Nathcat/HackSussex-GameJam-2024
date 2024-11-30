@@ -12,6 +12,7 @@ public class Combatant : MonoBehaviour
     private Card[] deck;
     private int health;
     private int energy;
+    public Card chosenCard;
 
     /// <summary>
     /// Create a new deck for this combatant, erasing the old deck if one existed
@@ -52,11 +53,11 @@ public class Combatant : MonoBehaviour
     }
 
     /// <summary>
-    /// Choose a card from this combatant's deck
+    /// Choose a card from this combatant's deck. Should set chosenCard
     /// </summary>
     /// <returns>The selected card</returns>
     /// <exception cref="DeckIsEmptyException">Thrown if the deck is empty</exception> 
-    virtual public Card chooseCard() {
+    virtual public void chooseCard() {
         throw new NotImplementedException();
     }
 }

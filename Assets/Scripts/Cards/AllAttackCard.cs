@@ -19,11 +19,11 @@ public class AllAttackCard : Card
     public override void Play(Combatant combatant)
     {
         List<Combatant> combatants = FindAnyObjectByType<FightController>().combatants;
+        AudioSource.PlayClipAtPoint(GetSound(), combatant.transform.position);
         for (int i = 1; i < combatants.Count; i++)
         {
             combatants[i].updateHealth(-attackDamage);
-            AudioSource.PlayClipAtPoint(GetSound(), combatant.transform.position);
-            CardAnimation.Play(GetIcon(), combatant.transform.position);
+            CardAnimation.Play(GetIcon(), combatants[i].transform.position);
         }
     }
 

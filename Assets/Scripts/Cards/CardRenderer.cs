@@ -37,7 +37,7 @@ public class CardRenderer : MonoBehaviour
     {
         transform.localScale = Vector3.Lerp(transform.localScale, scale * (enlarged ? enlargeAmount : 1), Time.deltaTime * 5);
         if (col.enabled) transform.position = Vector3.Lerp(transform.position, enlarged ? new Vector3(position.x, -1, position.z - 0.1f) : position, Time.deltaTime * 5);
-        references.background.color = new Color(80, 41, 41);
+        references.background.color = card.GetTimeCost() > playerController.getEnergy() ? new Color(0.3f, 0.2f, 0.2f) : Color.white;
     }
 
     public Card GetCard() { return card; }

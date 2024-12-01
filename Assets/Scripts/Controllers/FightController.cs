@@ -58,6 +58,13 @@ public class FightController : MonoBehaviour
 
             if (currentCombatant == combatants.Count) currentCombatant = 0;
         }
+
+        if (currentCombatant == 0) {
+            if (combatants[0].getEnergy() == 0) {
+                combatants[0].resetEnergy();
+                currentCombatant = 1;
+            }
+        }
         
         playTurn();
     }

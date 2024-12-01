@@ -24,6 +24,8 @@ public class GraphRenderer : MonoBehaviour
                     new Vector3(Random.Range(-5, 5) * 1.5f, (i * 2) - 2, 0f),
                     new Quaternion()
                 );
+
+                graph.levels[i][x].obj.AddComponent<NodeComponent>().node = graph.levels[i][x];
             }
         }
 

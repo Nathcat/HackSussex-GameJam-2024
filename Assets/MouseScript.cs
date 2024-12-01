@@ -1,4 +1,5 @@
 using System.Linq;
+using Unity.Burst.CompilerServices;
 using UnityEngine;
 using UnityEngine.XR;
 
@@ -24,10 +25,8 @@ public class MouseScript : MonoBehaviour
             card = null;
         }
 
-        dir =  Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 1f)) - Camera.main.transform.position;
-        RaycastHit hit;
-
-       if (Input.GetMouseButtonDown(0) && Physics.Raycast(Camera.main.transform.position, dir, out hit, Mathf.Infinity) && (hand.GetComponent<FightController>().combatants.Count != 0)
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+       if (Input.GetMouseButtonDown(0) && Physics.Raycast(ray, out RaycastHit hit, 100) && (hand.GetComponent<FightController>().combatants.Count != 0)
 )
         {
             if (hit.collider.gameObject.CompareTag("combatant") && card != null)

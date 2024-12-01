@@ -17,7 +17,7 @@ public class ShowIconScript : MonoBehaviour
 
     public void Update(){
         if(combatant.CompareTag("dead")){
-            SpriteRenderer.sprite.enabled = false;
+            shownIcon.sprite.enabled = false;
         }
     }
 }

@@ -19,7 +19,7 @@ public class HealthBarController : MonoBehaviour
         defenceSlider.value = combatant.getDefence();
 
         if(combatant.CompareTag("dead")){
-            SpriteRenderer.sprite.enabled = false;
+            healthSlider.gameObject.SetActive(false);
         }
 
     }

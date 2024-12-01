@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class CardRenderer : MonoBehaviour
 {
+    [SerializeField] private References references;
     [SerializeField] private float enlargeAmount;
     [SerializeField] private Card card;
-    [SerializeField] private References references;
     
     private bool enlarged = false;
+    private Collider collider;
     private Vector3 position;
     private Vector3 scale;
 
@@ -16,6 +17,7 @@ public class CardRenderer : MonoBehaviour
     {
         position = transform.position;
         scale = transform.localScale;
+        collider = GetComponent<Collider>();
         Render(card);
     }
 
@@ -32,7 +34,7 @@ public class CardRenderer : MonoBehaviour
     private void Update()
     {
         transform.localScale = Vector3.Lerp(transform.localScale, scale * (enlarged ? enlargeAmount : 1), Time.deltaTime * 5);
-        transform.position = Vector3.Lerp(transform.position, enlarged ? new Vector3(position.x, -1, position.z - 0.1f) : position, Time.deltaTime * 5);
+        if (collider.enabled) transform.position = Vector3.Lerp(transform.position, enlarged ? new Vector3(position.x, -1, position.z - 0.1f) : position, Time.deltaTime * 5);
     }
 
     public Card GetCard() { return card; }

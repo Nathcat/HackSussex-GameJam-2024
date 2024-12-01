@@ -79,7 +79,7 @@ public class CameraController : MonoBehaviour
 
                             canvas.transform.GetChild(1).GetComponent<Button>().onClick.AddListener(delegate {
                                 AudioSource.PlayClipAtPoint(menuSelect, Camera.main.transform.position);
-                                
+
                                 targetNode = hit.collider.gameObject;
                                 fuel -= e.weight;
                                 canvas.gameObject.SetActive(false);
@@ -186,9 +186,7 @@ public class CameraController : MonoBehaviour
         PlayerPrefs.SetInt("InitTargetIndex", targetNode.GetComponent<NodeComponent>().index);
 
         if (targetNode.GetComponent<NodeComponent>().level == (graphRenderer.graph.levels.Count - 1)) {
-            Debug.LogError("This would be the boss scene!");
-            PlayerPrefs.DeleteAll();
-            SceneManager.LoadScene("WinScene");
+            SceneManager.LoadScene("BossFightScene");
         }
         else {
             SceneManager.LoadScene("FightScene");

@@ -16,6 +16,7 @@ public class FightController : MonoBehaviour
 
     public GameObject handPrefabAsset;
     public GameObject handPrefab;
+    public bool endGameOnFinish = false;
 
     [SerializeField] private AudioClip buttonSFX;
 
@@ -56,7 +57,8 @@ public class FightController : MonoBehaviour
             
             if (combatants.Count == 1) {
                 PlayerPrefs.SetInt("AddFuel", Random.Range(3, 7));
-                SceneManager.LoadScene("GraphScene");
+                if (!endGameOnFinish) SceneManager.LoadScene("GraphScene");
+                else SceneManager.LoadScene("WinScene");
             }
 
             if (currentCombatant == combatants.Count) currentCombatant = 0;

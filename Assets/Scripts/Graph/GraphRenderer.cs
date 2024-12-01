@@ -15,7 +15,11 @@ public class GraphRenderer : MonoBehaviour
 
     void Start()
     {
-        graph = new Graph(numberOfLevels, maxNodesPerLevel, maxWeight);
+        if (!PlayerPrefs.HasKey("graph-seed")) {
+            PlayerPrefs.SetInt("graph-seed", Random.Range(0, 20));
+        }
+
+        graph = new Graph(PlayerPrefs.GetInt("graph-seed"), numberOfLevels, maxNodesPerLevel, maxWeight);
 
         for (int i = 0; i < graph.levels.Count; i++) {
             for (int x = 0; x < graph.levels[i].Count; x++) {

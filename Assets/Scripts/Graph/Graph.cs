@@ -4,15 +4,14 @@ using UnityEngine;
 
 public class Graph
 {
-    public static int randomSeed = (int) System.DateTime.Now.TimeOfDay.TotalMilliseconds;
     public Node rootNode;
     public List<List<Node>> levels = new List<List<Node>>();
     private int numberOfLevels;
     private int maxNodesPerLevel;
     private int maxWeight;
 
-    public Graph(int numberOfLevels, int maxNodesPerLevel, int maxWeight) {
-        Random.InitState(randomSeed);
+    public Graph(int seed, int numberOfLevels, int maxNodesPerLevel, int maxWeight) {
+        Random.InitState(seed);
 
         this.numberOfLevels = numberOfLevels;
         this.maxNodesPerLevel = maxNodesPerLevel;

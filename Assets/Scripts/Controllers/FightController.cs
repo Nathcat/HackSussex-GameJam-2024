@@ -48,11 +48,13 @@ public class FightController : MonoBehaviour
         if (combatants[currentCombatant].getHealth() == 0) {
             if (currentCombatant == 0) {
                 SceneManager.LoadScene("GameOver");
+                return;
             }
 
             combatants.RemoveAt(currentCombatant);
             
             if (combatants.Count == 1) {
+                PlayerPrefs.SetInt("AddFuel", Random.Range(3, 7));
                 SceneManager.LoadScene("GraphScene");
             }
 

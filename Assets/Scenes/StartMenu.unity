@@ -559,7 +559,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: PlaceHolder
+  m_text: HackCat
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3bed4018cae2e2d4ba7b02103fec9a73, type: 2}
   m_sharedMaterial: {fileID: 6786753071953769265, guid: 3bed4018cae2e2d4ba7b02103fec9a73, type: 2}

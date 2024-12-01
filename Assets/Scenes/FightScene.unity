@@ -212,7 +212,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3066115041422349579, guid: af6588187f7dfba478340aecc3c27d3f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3066115041422349579, guid: af6588187f7dfba478340aecc3c27d3f, type: 3}
       propertyPath: m_LocalRotation.w
@@ -665,9 +665,9 @@ MonoBehaviour:
   currentCombatant: 0
   enemyPrefab: {fileID: 6470072097230172647, guid: 98dc9d387bc6aec4192910956eb20893, type: 3}
   enemySpawnPositions:
-  - {x: 5, y: -1, z: 1.5}
-  - {x: 5, y: 1, z: 1.5}
-  - {x: 5, y: 3, z: 1.5}
+  - {x: 5, y: -1, z: 6}
+  - {x: 5, y: 1, z: 6}
+  - {x: 5, y: 3, z: 6}
   handPrefabAsset: {fileID: 7575924559120054667, guid: 988f84d22f576424bad242c393822a13, type: 3}
   handPrefab: {fileID: 7575924559120054667, guid: 988f84d22f576424bad242c393822a13, type: 3}
 --- !u!4 &554346074
@@ -1707,6 +1707,56 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1851964405
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1851964407}
+  - component: {fileID: 1851964406}
+  m_Layer: 0
+  m_Name: Hand
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1851964406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1851964405}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11956576c5eba8841ab8a24b5c81da5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  card_prefab: {fileID: 3096225395915554470, guid: 18d0fbdfa4a53e14f9f8579d7b778e28, type: 3}
+  width: 0
+  max_count: 0
+  start_pos: 0
+  funky_store: []
+  hold_gen: []
+--- !u!4 &1851964407
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1851964405}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -3.55, z: 5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1862435967
 GameObject:
   m_ObjectHideFlags: 0
@@ -2091,3 +2141,4 @@ SceneRoots:
   - {fileID: 7879341}
   - {fileID: 34267568}
   - {fileID: 1773332728}
+  - {fileID: 1851964407}

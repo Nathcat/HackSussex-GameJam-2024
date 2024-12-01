@@ -197,6 +197,7 @@ MonoBehaviour:
     icon: {fileID: 7062157126981873545}
   enlargeAmount: 3
   card: {fileID: 11400000, guid: 429aad2f3bdb7ed40bbd26ac12f086cc, type: 2}
+  boopsfx: {fileID: 8300000, guid: 723ea17f300596c43afd0a7228686ea0, type: 3}
 --- !u!114 &4613758485606993441
 MonoBehaviour:
   m_ObjectHideFlags: 0

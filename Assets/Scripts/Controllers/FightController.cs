@@ -18,6 +18,8 @@ public class FightController : MonoBehaviour
     public GameObject handPrefab;
 
     public void Start() {
+        Random.InitState((int)System.DateTime.Now.Ticks);
+
         int enemyCount = 3;
         combatants = new List<Combatant>();
 
@@ -25,7 +27,7 @@ public class FightController : MonoBehaviour
 
         for (int i = 1; i < enemyCount + 1; i++) {
             combatants.Add(Instantiate(
-                enemyPrefabs[Random.Range(0, enemyPrefabs.Length - 1)],
+                enemyPrefabs[Random.Range(0, enemyPrefabs.Length)],
                 enemySpawnPositions[i - 1],
                 new Quaternion()
             ).GetComponent<Combatant>());

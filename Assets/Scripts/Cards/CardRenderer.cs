@@ -7,6 +7,7 @@ public class CardRenderer : MonoBehaviour
     [SerializeField] private References references;
     [SerializeField] private float enlargeAmount;
     [SerializeField] private Card card;
+    [SerializeField] private AudioClip boopsfx;
     
     private bool enlarged = false;
     private Collider col;
@@ -25,6 +26,7 @@ public class CardRenderer : MonoBehaviour
 
     private void OnMouseEnter()
     {
+        AudioSource.PlayClipAtPoint(boopsfx, transform.position);
         enlarged = true;
     }
 

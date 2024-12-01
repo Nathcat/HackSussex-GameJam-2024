@@ -21,7 +21,7 @@ public class CardAnimation : MonoBehaviour
     private void Update()
     {
         renderer.color = Color.Lerp(renderer.color, Color.white, Time.deltaTime * 10);
-        transform.localScale -= Vector3.one * 0.075f;
+        transform.localScale -= Vector3.one * 8 * Time.deltaTime;
 
         if (transform.localScale.magnitude < 0.1) Destroy(gameObject);
     }

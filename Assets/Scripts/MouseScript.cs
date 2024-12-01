@@ -39,7 +39,7 @@ public class MouseScript : MonoBehaviour
             if (hit.collider.gameObject.CompareTag("combatant") && card != null)
             {
                 Card cardClass = card.GetComponent<CardRenderer>().GetCard();
-                if (cardClass.IsSelf() && !hit.collider.gameObject.TryGetComponent(out PlayerController _)) return;
+                if (cardClass.IsSelf() != hit.collider.gameObject.TryGetComponent(out PlayerController _)) return;
                 FightController fightController = hand.GetComponent<FightController>();
                 fightController.handPrefab.GetComponent<HandOrganiser>().funky_store.Remove(card);
                 fightController.combatants[fightController.currentCombatant].playCard(cardClass, hit.collider.gameObject.GetComponent<Combatant>());

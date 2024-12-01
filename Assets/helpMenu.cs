@@ -10,7 +10,7 @@ public class helpMenu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        help_menu.SetActive(false);
+        
     }
 
     public void help() {

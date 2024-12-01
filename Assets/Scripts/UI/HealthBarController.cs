@@ -17,5 +17,11 @@ public class HealthBarController : MonoBehaviour
     {
         healthSlider.value = combatant.getHealth();
         defenceSlider.value = combatant.getDefence();
+
+        if(combatant.CompareTag("dead")){
+            SpriteRenderer.sprite.enabled = false;
+        }
+
     }
+
 }

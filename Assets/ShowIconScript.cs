@@ -14,4 +14,10 @@ public class ShowIconScript : MonoBehaviour
     {
         shownIcon.sprite = nextcard.GetIcon();
     }
+
+    public void Update(){
+        if(combatant.CompareTag("dead")){
+            SpriteRenderer.sprite.enabled = false
+        }
+    }
 }

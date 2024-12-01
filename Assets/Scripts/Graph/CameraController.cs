@@ -12,6 +12,8 @@ public class CameraController : MonoBehaviour
     public int fuel = 10;
     public GameObject canvas;
     public TMP_Text fuelText;
+    public GameObject nodeBorderPrefab;
+    private GameObject currentNodeBorder;
 
     public void Start() {
         if (PlayerPrefs.HasKey("InitFuel")) {
@@ -31,6 +33,8 @@ public class CameraController : MonoBehaviour
         }
         else {
             targetNode = graphRenderer.graph.rootNode.obj;
+            currentNodeBorder = Instantiate(nodeBorderPrefab, Vector3.zero, new Quaternion());
+            currentNodeBorder.transform.SetParent(targetNode.transform, false);
         }
     }
 
@@ -70,6 +74,13 @@ public class CameraController : MonoBehaviour
                                 targetNode = hit.collider.gameObject;
                                 fuel -= e.weight;
                                 canvas.gameObject.SetActive(false);
+
+                                if (currentNodeBorder != null) {
+                                    Destroy(currentNodeBorder);
+                                }
+
+                                currentNodeBorder = Instantiate(nodeBorderPrefab, Vector3.zero, new Quaternion());
+                                currentNodeBorder.transform.SetParent(targetNode.transform, false);
                             });
 
                             canvas.transform.GetChild(2).GetComponent<Button>().onClick.AddListener(delegate {
@@ -108,6 +119,13 @@ public class CameraController : MonoBehaviour
                                 targetNode = hit.collider.gameObject;
                                 fuel -= e.weight;
                                 canvas.gameObject.SetActive(false);
+
+                                if (currentNodeBorder != null) {
+                                    Destroy(currentNodeBorder);
+                                }
+
+                                currentNodeBorder = Instantiate(nodeBorderPrefab, Vector3.zero, new Quaternion());
+                                currentNodeBorder.transform.SetParent(targetNode.transform, false);
                             });
 
                             canvas.transform.GetChild(2).GetComponent<Button>().onClick.AddListener(delegate {
@@ -137,7 +155,7 @@ public class CameraController : MonoBehaviour
     }
 
     public void UpdateCameraPosition() {
-        Vector3 targetPosition = new Vector3(targetNode.transform.position.x, targetNode.transform.position.y, -20f);
+        Vector3 targetPosition = new Vector3(targetNode.transform.position.x, targetNode.transform.position.y, -15f);
         Vector3 difference = targetPosition - transform.position;
         
         transform.Translate(difference * 0.1f);

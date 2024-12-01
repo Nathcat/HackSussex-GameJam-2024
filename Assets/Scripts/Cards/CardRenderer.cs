@@ -9,7 +9,7 @@ public class CardRenderer : MonoBehaviour
     [SerializeField] private Card card;
     
     private bool enlarged = false;
-    private Collider collider;
+    private Collider col;
     private Vector3 position;
     private Vector3 scale;
     private PlayerController playerController;
@@ -18,7 +18,7 @@ public class CardRenderer : MonoBehaviour
     {
         position = transform.position;
         scale = transform.localScale;
-        collider = GetComponent<Collider>();
+        col = GetComponent<Collider>();
         playerController = FindObjectOfType<PlayerController>();
         Render(card);
     }
@@ -36,7 +36,7 @@ public class CardRenderer : MonoBehaviour
     private void Update()
     {
         transform.localScale = Vector3.Lerp(transform.localScale, scale * (enlarged ? enlargeAmount : 1), Time.deltaTime * 5);
-        if (collider.enabled) transform.position = Vector3.Lerp(transform.position, enlarged ? new Vector3(position.x, -1, position.z - 0.1f) : position, Time.deltaTime * 5);
+        if (col.enabled) transform.position = Vector3.Lerp(transform.position, enlarged ? new Vector3(position.x, -1, position.z - 0.1f) : position, Time.deltaTime * 5);
         references.background.color = new Color(80, 41, 41);
     }
 
@@ -46,7 +46,6 @@ public class CardRenderer : MonoBehaviour
     {
         this.card = card;
 
-        references.background.sprite = card.GetBackground();
         references.title.text = card.GetTitle();
         references.description.text = card.GetDescription();
         references.cost.text = "F(N) = " + card.GetTimeCost().ToString();

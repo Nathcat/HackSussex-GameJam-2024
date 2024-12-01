@@ -4,6 +4,15 @@ using UnityEngine;
 
 public class EnemyController : Combatant
 {    
+    public Card nextCard;
+
+    override public void Start() {
+        base.Start();
+        nextCard = base.getDeck()[
+            Random.Range(0, base.getDeck().Length - 1)
+        ];
+    }
+
     override public void startTurn() {
         base.startTurn();
 
@@ -11,7 +20,8 @@ public class EnemyController : Combatant
             createDeck(fightController.enemyCardSet, 7);
         }
 
-        base.chosenCard = base.getDeck()[
+        base.chosenCard = nextCard;
+        nextCard = base.getDeck()[
             Random.Range(0, base.getDeck().Length - 1)
         ];
 

@@ -13,12 +13,14 @@ public class Combatant : MonoBehaviour
     private List<Card> deck = new List<Card>();
     [SerializeField] private int health;
     [SerializeField] private int energy;
+    private int baseEnergy = 10;
     [SerializeField] private int defence;
     [HideInInspector] public Card chosenCard;
     [HideInInspector] public FightController fightController;
 
     public void Awake() {
         fightController = FindObjectOfType<FightController>();
+        baseEnergy = energy;
     }
 
     /// <summary>
@@ -70,7 +72,9 @@ public class Combatant : MonoBehaviour
     public int getDefence() { return defence; }
     public void updateDefence(int delta) { defence += delta; }
 
-    public int getEnergy() { return energy; }
+    public int getEnergy() { return energy < 0 ? 0 : energy; }
+
+    public void resetEnergy() { energy = baseEnergy; }
 
     /// <summary>
     /// Change the value of energy by delta
@@ -84,6 +88,7 @@ public class Combatant : MonoBehaviour
     /// <param name="card">The card to play</param>
     /// <param name="target">Who to target with the card</param>
     public void playCard(Card card, Combatant target) {
+        updateEnergy(-card.GetTimeCost());
         card.Play(target);
         deck.Remove(card);
     }

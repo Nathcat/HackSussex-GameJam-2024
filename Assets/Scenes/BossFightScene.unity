@@ -2358,6 +2358,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4567299745389375155, guid: 3aa91b722692b6d488cb25125f238931, type: 3}
+      propertyPath: health
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 6470072097230172647, guid: 3aa91b722692b6d488cb25125f238931, type: 3}
       propertyPath: m_Name
       value: Boss

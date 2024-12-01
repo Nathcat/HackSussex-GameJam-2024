@@ -727,7 +727,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: dfa463a97fd4c534887bca1a1ef1f161, type: 2}
   combatants: []
   currentCombatant: 0
-  enemyPrefab: {fileID: 6470072097230172647, guid: 98dc9d387bc6aec4192910956eb20893, type: 3}
+  enemyPrefabs:
+  - {fileID: 6470072097230172647, guid: 98dc9d387bc6aec4192910956eb20893, type: 3}
+  - {fileID: 6470072097230172647, guid: 53e82e8b95388604b9e4c30c2ef6c533, type: 3}
+  - {fileID: 6470072097230172647, guid: 433e0384743648644952e6ab87c6fdd5, type: 3}
   enemySpawnPositions:
   - {x: 3, y: -1, z: 6}
   - {x: 5, y: -1.4, z: 6}

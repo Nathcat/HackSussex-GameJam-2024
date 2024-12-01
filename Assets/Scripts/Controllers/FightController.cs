@@ -11,7 +11,7 @@ public class FightController : MonoBehaviour
     public List<Combatant> combatants;
     public int currentCombatant = 0;
 
-    public GameObject enemyPrefab;
+    public GameObject[] enemyPrefabs;
     public Vector3[] enemySpawnPositions;
 
     public GameObject handPrefabAsset;
@@ -25,7 +25,7 @@ public class FightController : MonoBehaviour
 
         for (int i = 1; i < enemyCount + 1; i++) {
             combatants.Add(Instantiate(
-                enemyPrefab,
+                enemyPrefabs[Random.Range(0, enemyPrefabs.Length - 1)],
                 enemySpawnPositions[i - 1],
                 new Quaternion()
             ).GetComponent<Combatant>());

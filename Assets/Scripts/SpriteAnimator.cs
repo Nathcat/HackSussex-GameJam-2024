@@ -16,7 +16,7 @@ public class SpriteAnimator : MonoBehaviour
 
     void Start()
     {
-        spriteRenderer = GetComponent<SpriteRenderer>();
+        TryGetComponent(out combatant);
         TryGetComponent(out imageRenderer);
         TryGetComponent(out spriteRenderer);
         if (spriteRenderer == null) imageRenderer.sprite = aliveFrames[0];

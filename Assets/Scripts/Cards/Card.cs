@@ -11,14 +11,7 @@ public abstract class Card : ScriptableObject
     [SerializeField] private string description;
     [SerializeField] private AudioClip sound;
 
-    protected abstract void PlayCard(Combatant combatant);
-
-    public virtual void Play(Combatant combatant)
-    {
-        AudioSource.PlayClipAtPoint(sound, combatant.transform.position);
-        CardAnimation.Play(icon, combatant.transform.position);
-        PlayCard(combatant);
-    }
+    public abstract void Play(Combatant combatant);
 
     public int GetTimeCost()
     {

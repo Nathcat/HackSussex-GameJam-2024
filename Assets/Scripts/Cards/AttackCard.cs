@@ -10,6 +10,11 @@ public class AttackCard : Card
         return attackDamage;
     }
 
+    public override bool IsSelf()
+    {
+        return false;
+    }
+
     public override void Play(Combatant combatant)
     {
         combatant.updateHealth(-attackDamage);

@@ -13,7 +13,7 @@ public abstract class Card : ScriptableObject
 
     protected abstract void PlayCard(Combatant combatant);
 
-    public void Play(Combatant combatant)
+    public virtual void Play(Combatant combatant)
     {
         AudioSource.PlayClipAtPoint(sound, combatant.transform.position);
         PlayCard(combatant);

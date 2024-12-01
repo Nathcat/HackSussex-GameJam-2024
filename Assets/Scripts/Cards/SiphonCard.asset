@@ -15,6 +15,6 @@ MonoBehaviour:
   timeCost: 0
   icon: {fileID: 0}
   title: Siphon Energy
-  description: 
+  description: Damages the player for 1 health and restores 2 energy!
   damage: 1
   energy: 2

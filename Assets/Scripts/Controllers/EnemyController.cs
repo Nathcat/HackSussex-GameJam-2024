@@ -34,7 +34,7 @@ public class EnemyController : Combatant
 
         // Show the chosen card here?
         GetComponentInChildren<ShowIconScript>().ChangeIcon(nextCard);
-        this.RunAfter(1, endTurn);
+        Util.RunAfter(1, endTurn);
     }
 
     override public void endTurn() {

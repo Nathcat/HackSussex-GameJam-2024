@@ -1,32 +1,40 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-public static class TranslateComplexityScript
+public class Util : MonoBehaviour
 {
+    public CardAnimation animationPrefab;
+    public static Util instance {  get; private set; }
+
+    private void Start()
+    {
+        instance = this;
+    }
+
     public static string ConvertComplexity(int i){
         switch(i){
             case 0:
                 return "1";
 
             case 1:
-                return "log n";
+                return "log N";
 
             case 2:
-                return "n";
+                return "N";
 
             case 3:
-                return "n log n";
+                return "N log N";
 
             case 4:
                 return "n²";
 
             case 5:
-                return "2ⁿ";
+                return "2ᴺ";
         }
         return "unknown";
     }
 
-    public static void RunAfter(this MonoBehaviour mono, float delay, System.Action action)
+    public static void RunAfter(float delay, System.Action action)
     {
         IEnumerator ThrowDelay()
         {
@@ -34,6 +42,6 @@ public static class TranslateComplexityScript
             action();
         }
 
-        mono.StartCoroutine(ThrowDelay());
+        instance.StartCoroutine(ThrowDelay());
     }
 }

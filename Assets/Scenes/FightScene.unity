@@ -693,6 +693,7 @@ GameObject:
   - component: {fileID: 554346074}
   - component: {fileID: 554346073}
   - component: {fileID: 554346076}
+  - component: {fileID: 554346077}
   m_Layer: 0
   m_Name: FightController
   m_TagString: Untagged
@@ -766,6 +767,19 @@ MonoBehaviour:
   mouse_position: {x: 0, y: 0, z: 0}
   hand: {fileID: 0}
   pickupSound: {fileID: 8300000, guid: bab2c96bdb1377841a67b434e7406b86, type: 3}
+--- !u!114 &554346077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 554346072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6883d8f464ce60f4fa5286cbd2fe4239, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animationPrefab: {fileID: 3519078214387003502, guid: 75781951294e62342abf37dc171dca12, type: 3}
 --- !u!1 &556139896
 GameObject:
   m_ObjectHideFlags: 0

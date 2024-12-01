@@ -48,7 +48,7 @@ public class CardRenderer : MonoBehaviour
 
         references.title.text = card.GetTitle();
         references.description.text = card.GetDescription();
-        references.cost.text = "F(N) = " + TranslateComplexityScript.ConvertComplexity(card.GetTimeCost());
+        references.cost.text = "F(N) = " + Util.ConvertComplexity(card.GetTimeCost());
         references.icon.sprite = card.GetIcon();
         references.stat.text = card.GetStat().ToString();
     }

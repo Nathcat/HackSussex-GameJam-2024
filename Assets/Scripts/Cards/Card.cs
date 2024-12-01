@@ -16,6 +16,7 @@ public abstract class Card : ScriptableObject
     public virtual void Play(Combatant combatant)
     {
         AudioSource.PlayClipAtPoint(sound, combatant.transform.position);
+        CardAnimation.Play(icon, combatant.transform.position);
         PlayCard(combatant);
     }
 

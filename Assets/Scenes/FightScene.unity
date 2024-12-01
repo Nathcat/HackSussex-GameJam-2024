@@ -717,7 +717,8 @@ MonoBehaviour:
   enemyCardSet:
   - {fileID: 11400000, guid: c48ebbc1dc59f0e46a48d1187b6fcee1, type: 2}
   - {fileID: 11400000, guid: dfa463a97fd4c534887bca1a1ef1f161, type: 2}
-  combatants: []
+  combatants:
+  - {fileID: 34267569}
   currentCombatant: 0
   enemyPrefabs:
   - {fileID: 6470072097230172647, guid: 98dc9d387bc6aec4192910956eb20893, type: 3}

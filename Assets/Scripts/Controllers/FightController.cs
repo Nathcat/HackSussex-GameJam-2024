@@ -20,10 +20,7 @@ public class FightController : MonoBehaviour
     public void Start() {
         Random.InitState((int)System.DateTime.Now.Ticks);
 
-        int enemyCount = 3;
-        combatants = new List<Combatant>();
-
-        combatants.Add(FindObjectOfType<PlayerController>());
+        int enemyCount = Random.Range(1, enemySpawnPositions.Length);
 
         for (int i = 1; i < enemyCount + 1; i++) {
             combatants.Add(Instantiate(

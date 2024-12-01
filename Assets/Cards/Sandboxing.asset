@@ -18,4 +18,4 @@ MonoBehaviour:
   description: Runs the code in a emulated enviroment so that any malicious code
     cant reach the real system. Gives the player 2 defence.
   sound: {fileID: 8300000, guid: d65cc2d4cf03e194886344174ce068c0, type: 3}
-  defencePoints: 3
+  defencePoints: 9

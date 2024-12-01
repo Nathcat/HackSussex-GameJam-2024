@@ -32,7 +32,7 @@ public class BogoSortCard : Card
     {
         return false;
     }
-    protected override void PlayCard(Combatant combatant)
+    protected override void Play(Combatant combatant)
     {
         GameObject player = GameObject.Find("Player");
         if (player.GetComponent<Combatant>().getEnergy() != 0)

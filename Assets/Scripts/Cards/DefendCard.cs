@@ -15,7 +15,7 @@ public class DefendCard : Card
         return true;
     }
 
-    protected override void PlayCard(Combatant combatant)
+    public override void Play(Combatant combatant)
     {
         combatant.updateDefence(defencePoints);
     }

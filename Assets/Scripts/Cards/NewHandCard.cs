@@ -20,7 +20,7 @@ public class NewHandCard : Card
         return true;
     }
 
-    protected override void PlayCard(Combatant combatant)
+    protected override void Play(Combatant combatant)
     {
         GameObject player = GameObject.Find("Player");
         GameObject hand = GameObject.Find("FightController");

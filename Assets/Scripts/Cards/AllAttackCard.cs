@@ -16,7 +16,7 @@ public class AllAttackCard : Card
         return false;
     }
 
-    protected override void PlayCard(Combatant combatant)
+    public override void Play(Combatant combatant)
     {
         List<Combatant> combatants = FindAnyObjectByType<FightController>().combatants;
         for (int i = 1; i < combatants.Count; i++)

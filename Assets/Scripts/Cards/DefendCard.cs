@@ -5,6 +5,11 @@ public class DefendCard : Card
 {
     [SerializeField] private int defencePoints;
 
+    public override int GetStat()
+    {
+        return defencePoints;
+    }
+
     public override void Play(Combatant combatant)
     {
         combatant.updateDefence(defencePoints);

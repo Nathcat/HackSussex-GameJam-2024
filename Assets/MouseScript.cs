@@ -30,7 +30,7 @@ public class MouseScript : MonoBehaviour
        if (Input.GetMouseButtonDown(0) && Physics.Raycast(Camera.main.transform.position, dir, out hit, Mathf.Infinity) && (hand.GetComponent<FightController>().combatants.Count != 0)
 )
         {
-            if (hit.collider.gameObject.CompareTag("combatant"))
+            if (hit.collider.gameObject.CompareTag("combatant") && card != null)
             {
                 Card cardClass = card.GetComponent<CardRenderer>().GetCard();
                 FightController fightController = hand.GetComponent<FightController>();

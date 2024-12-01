@@ -21,7 +21,9 @@ public class CardRenderer : MonoBehaviour
         references.background.sprite = card.GetBackground();
         references.title.text = card.GetTitle();
         references.description.text = card.GetDescription();
-        references.cost.text = card.GetTimeCost().ToString();
+        references.cost.text = "F(N) = " + card.GetTimeCost().ToString();
+        references.icon.sprite = card.GetIcon();
+        references.stat.text = card.GetStat().ToString();
     }
 
     [Serializable]
@@ -31,5 +33,7 @@ public class CardRenderer : MonoBehaviour
         public TextMeshPro title;
         public TextMeshPro description;
         public TextMeshPro cost;
+        public TextMeshPro stat;
+        public SpriteRenderer icon;
     }
 }

@@ -713,15 +713,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerCardSet:
-  - {fileID: 11400000, guid: 429aad2f3bdb7ed40bbd26ac12f086cc, type: 2}
-  - {fileID: 11400000, guid: bf255df69aba40247a27225a8df64041, type: 2}
-  - {fileID: 11400000, guid: bfc98a946ab12be4b820561c3b5c2eb3, type: 2}
-  - {fileID: 11400000, guid: c315782d210979d49a1da1b79fa56961, type: 2}
-  - {fileID: 11400000, guid: 234abb404eccb5649b374279d3eecf6d, type: 2}
-  - {fileID: 11400000, guid: 7681d9f57980ec94a8b57f8c567cff49, type: 2}
+  - {fileID: 11400000, guid: 114a43ceb73c0264cabc28afdc01768b, type: 2}
+  - {fileID: 11400000, guid: dfa463a97fd4c534887bca1a1ef1f161, type: 2}
+  - {fileID: 11400000, guid: d8274c18ab22a5e47bb191a92f95f6e8, type: 2}
+  - {fileID: 11400000, guid: 5678fee7e6b86494ca5240a213aa8d3e, type: 2}
+  - {fileID: 11400000, guid: c48ebbc1dc59f0e46a48d1187b6fcee1, type: 2}
+  - {fileID: 11400000, guid: 0ddbcffe27f466e43af6ab110e5ddda6, type: 2}
+  - {fileID: 11400000, guid: 9871821292537d5429614af22ff3f702, type: 2}
   enemyCardSet:
-  - {fileID: 11400000, guid: bf255df69aba40247a27225a8df64041, type: 2}
-  - {fileID: 11400000, guid: 429aad2f3bdb7ed40bbd26ac12f086cc, type: 2}
+  - {fileID: 11400000, guid: c48ebbc1dc59f0e46a48d1187b6fcee1, type: 2}
+  - {fileID: 11400000, guid: dfa463a97fd4c534887bca1a1ef1f161, type: 2}
   combatants: []
   currentCombatant: 0
   enemyPrefab: {fileID: 6470072097230172647, guid: 98dc9d387bc6aec4192910956eb20893, type: 3}

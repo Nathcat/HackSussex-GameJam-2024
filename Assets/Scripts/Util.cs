@@ -1,4 +1,7 @@
-﻿public static class TranslateComplexityScript
+﻿using System.Collections;
+using UnityEngine;
+
+public static class TranslateComplexityScript
 {
     public static string ConvertComplexity(int i){
         switch(i){
@@ -19,12 +22,18 @@
 
             case 5:
                 return "2ⁿ";
-
-
-
-
-
         }
         return "unknown";
+    }
+
+    public static void RunAfter(this MonoBehaviour mono, float delay, System.Action action)
+    {
+        IEnumerator ThrowDelay()
+        {
+            yield return new WaitForSeconds(delay);
+            action();
+        }
+
+        mono.StartCoroutine(ThrowDelay());
     }
 }

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyController : Combatant
@@ -36,8 +34,7 @@ public class EnemyController : Combatant
 
         // Show the chosen card here?
         GetComponentInChildren<ShowIconScript>().ChangeIcon(nextCard);
-
-        endTurn();
+        this.RunAfter(1, endTurn);
     }
 
     override public void endTurn() {

@@ -52,6 +52,7 @@ public class BogoSortCard : Card
             if (random >= 0 && random < 10)
             {
                 //no more
+                return;
             }
             else if (random >= 10 && random < 40)
             {
@@ -59,7 +60,6 @@ public class BogoSortCard : Card
                 
                 AudioSource.PlayClipAtPoint(attackclip, combatant.transform.position);
                 CardAnimation.Play(attackCard, combatant.transform.position);
-                Util.RunAfter(1f,() => playagain(combatant));
             }
             else if (random >= 40 && random < 70)
             {
@@ -67,7 +67,6 @@ public class BogoSortCard : Card
                 
                 AudioSource.PlayClipAtPoint(defenceclip, player.transform.position);
                 CardAnimation.Play(defenceCard, player.transform.position);
-                Util.RunAfter(1f, () => playagain(combatant));
             }
             else if (random >= 70 && random < 80)
             {
@@ -76,7 +75,6 @@ public class BogoSortCard : Card
                 
                 AudioSource.PlayClipAtPoint(energyclip, player.transform.position);
                 CardAnimation.Play(energyCard, player.transform.position);
-                Util.RunAfter(1f, () => playagain(combatant));
             }
             else if (random >= 80 && random < 90)
             {
@@ -84,7 +82,6 @@ public class BogoSortCard : Card
                 player.GetComponent<Combatant>().createDeck(hand.GetComponent<FightController>().playerCardSet,7);
                 GameObject bal = GameObject.Find("Hand(Clone)");
                 bal.gameObject.GetComponent<HandOrganiser>().Generate(player.gameObject.GetComponent<Combatant>().getDeck().ToList<Card>());
-                Util.RunAfter(1f, () => playagain(combatant));
                 AudioSource.PlayClipAtPoint(rerollclip, player.transform.position);
                 CardAnimation.Play(rerollCard, player.transform.position);
 
@@ -92,15 +89,14 @@ public class BogoSortCard : Card
             else if (random >= 90 && random <= 100)
             {
                 List<Combatant> combatants = FindAnyObjectByType<FightController>().combatants;
+                AudioSource.PlayClipAtPoint(attackclip, combatant.transform.position);
                 for (int i = 1; i < combatants.Count; i++)
                 {
                     combatants[i].updateHealth(-attackDamage);
-                    AudioSource.PlayClipAtPoint(attackclip, combatant.transform.position);
-                    CardAnimation.Play(attackCard, combatant.transform.position);
-
+                    CardAnimation.Play(attackCard, combatants[i].transform.position);
                 }
-                Util.RunAfter(1f, () => playagain(combatant));
             }
+            Util.RunAfter(1f, () => playagain(combatant));
         }
     }
 }

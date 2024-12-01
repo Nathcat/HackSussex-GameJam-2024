@@ -9,11 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: befeff70be0f74144ac3839f9f9c2a05, type: 3}
-  m_Name: TestAttack
+  m_Script: {fileID: 11500000, guid: 6993741618c251040b1859a56268340e, type: 3}
+  m_Name: TestAllAttack
   m_EditorClassIdentifier: 
-  timeCost: 1
+  timeCost: 4
   icon: {fileID: 21300000, guid: 7ca364a9aeb86ed41b586332c4f8b624, type: 3}
-  title: Test Attack
-  description: Channels the power of placeholders to hack the target!
-  attackDamage: 4
+  title: Test All Die
+  description: Kill all
+  attackDamage: 2

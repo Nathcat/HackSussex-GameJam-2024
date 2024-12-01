@@ -13,28 +13,30 @@ public class EnemyController : Combatant
     }
 
     override public void startTurn() {
-        base.startTurn();
+        Util.RunAfter(0.5f, () => {
+            base.startTurn();
 
-        if (base.getDeck().Length == 0) {
-            createDeck(fightController.enemyCardSet, 7);
-        }
+            if (base.getDeck().Length == 0) {
+                createDeck(fightController.enemyCardSet, 7);
+            }
 
-        base.chosenCard = nextCard;
-        nextCard = base.getDeck()[
-            Random.Range(0, base.getDeck().Length - 1)
-        ];
-        if (base.chosenCard.IsSelf())
-        {
-            base.playCard(base.chosenCard, this);
-        }
-        else
-        {
-            base.playCard(base.chosenCard, fightController.combatants[0]);
-        }
+            base.chosenCard = nextCard;
+            nextCard = base.getDeck()[
+                Random.Range(0, base.getDeck().Length - 1)
+            ];
+            if (base.chosenCard.IsSelf())
+            {
+                base.playCard(base.chosenCard, this);
+            }
+            else
+            {
+                base.playCard(base.chosenCard, fightController.combatants[0]);
+            }
 
-        // Show the chosen card here?
-        GetComponentInChildren<ShowIconScript>().ChangeIcon(nextCard);
-        Util.RunAfter(1, endTurn);
+            // Show the chosen card here?
+            GetComponentInChildren<ShowIconScript>().ChangeIcon(nextCard);
+            Util.RunAfter(0.5f, endTurn);
+        });
     }
 
     override public void endTurn() {

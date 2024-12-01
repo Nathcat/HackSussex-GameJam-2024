@@ -124,7 +124,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 10
-  energy: 8
+  energy: 6
   defence: 0
   chosenCard: {fileID: 0}
   fightController: {fileID: 0}

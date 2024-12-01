@@ -30,6 +30,8 @@ public class CameraController : MonoBehaviour
             int level = PlayerPrefs.GetInt("InitTargetLevel");
             int index = PlayerPrefs.GetInt("InitTargetIndex");
             targetNode = graphRenderer.graph.levels[level][index].obj;
+            currentNodeBorder = Instantiate(nodeBorderPrefab, Vector3.zero, new Quaternion());
+            currentNodeBorder.transform.SetParent(targetNode.transform, false);
         }
         else {
             targetNode = graphRenderer.graph.rootNode.obj;
@@ -169,6 +171,7 @@ public class CameraController : MonoBehaviour
         if (targetNode.GetComponent<NodeComponent>().level == (graphRenderer.graph.levels.Count - 1)) {
             Debug.LogError("This would be the boss scene!");
             PlayerPrefs.DeleteAll();
+            SceneManager.LoadScene("WinScene");
         }
         else {
             SceneManager.LoadScene("FightScene");

@@ -15,7 +15,7 @@ MonoBehaviour:
   timeCost: 1
   icon: {fileID: 21300000, guid: a241a30c4bcdaae4aa21d9f4fdd04b52, type: 3}
   title: 'Input Validation '
-  description: Inpuy validation is checking an input before using it. This can come
+  description: Input validation is checking an input before using it. This can come
     in many forms such as checking it is the expected type. This card adds 1 defence
     point to the player.
   sound: {fileID: 8300000, guid: d65cc2d4cf03e194886344174ce068c0, type: 3}

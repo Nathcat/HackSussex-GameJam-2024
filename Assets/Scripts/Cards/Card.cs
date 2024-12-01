@@ -39,4 +39,6 @@ public abstract class Card : ScriptableObject
     }
 
     public abstract int GetStat();
+    
+    public abstract bool IsSelf();
 }

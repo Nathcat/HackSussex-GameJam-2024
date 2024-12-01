@@ -10,10 +10,15 @@ public class DefendCard : Card
         return defencePoints;
     }
 
+    public override bool IsSelf()
+    {
+        return true;
+    }
+
     public override void Play(Combatant combatant)
     {
         combatant.updateDefence(defencePoints);
     }
 
-
+    
 }

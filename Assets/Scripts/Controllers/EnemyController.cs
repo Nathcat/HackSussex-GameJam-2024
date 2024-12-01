@@ -25,8 +25,14 @@ public class EnemyController : Combatant
         nextCard = base.getDeck()[
             Random.Range(0, base.getDeck().Length - 1)
         ];
-
-        base.playCard(base.chosenCard, fightController.combatants[0]);
+        if (base.chosenCard.IsSelf())
+        {
+            base.playCard(base.chosenCard, this);
+        }
+        else
+        {
+            base.playCard(base.chosenCard, fightController.combatants[0]);
+        }
 
         // Show the chosen card here?
         GetComponentInChildren<ShowIconScript>().ChangeIcon(nextCard);

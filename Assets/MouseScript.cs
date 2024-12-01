@@ -12,6 +12,12 @@ public class MouseScript : MonoBehaviour
     [SerializeField] private GameObject card = null;
     [SerializeField] private Vector3 mouse_position;
     [SerializeField] GameObject hand = null;
+    private PlayerController playerController;
+
+    private void Start()
+    {
+        playerController = FindObjectOfType<PlayerController>();
+    }
 
     // Update is called once per frame
     void Update()
@@ -47,6 +53,8 @@ public class MouseScript : MonoBehaviour
             {
                 if (!card_held) 
                 {
+                    Card cardClass = hit.collider.gameObject.GetComponent<CardRenderer>().GetCard();
+                    if (cardClass.GetTimeCost() > playerController.getEnergy()) return;
                     card_held = true;
                     card = hit.collider.gameObject;
                     card.gameObject.GetComponent<Collider>().enabled = false;

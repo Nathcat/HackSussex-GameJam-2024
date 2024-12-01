@@ -188,8 +188,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 311fa87cadaefb648a23e569965df820, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enlargeAmount: 3
-  card: {fileID: 11400000, guid: 429aad2f3bdb7ed40bbd26ac12f086cc, type: 2}
   references:
     background: {fileID: 1561949478618728219}
     title: {fileID: 4624093817532147997}
@@ -197,6 +195,8 @@ MonoBehaviour:
     cost: {fileID: 9064177930523952654}
     stat: {fileID: 5207035275541738583}
     icon: {fileID: 7062157126981873545}
+  enlargeAmount: 3
+  card: {fileID: 11400000, guid: 429aad2f3bdb7ed40bbd26ac12f086cc, type: 2}
 --- !u!114 &4613758485606993441
 MonoBehaviour:
   m_ObjectHideFlags: 0

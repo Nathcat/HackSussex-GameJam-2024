@@ -767,7 +767,7 @@ MonoBehaviour:
   card: {fileID: 0}
   mouse_position: {x: 0, y: 0, z: 0}
   hand: {fileID: 0}
-  pickupSound: {fileID: 0}
+  pickupSound: {fileID: 8300000, guid: bab2c96bdb1377841a67b434e7406b86, type: 3}
 --- !u!114 &554346077
 MonoBehaviour:
   m_ObjectHideFlags: 0

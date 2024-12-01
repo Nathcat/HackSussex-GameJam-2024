@@ -717,6 +717,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: bf255df69aba40247a27225a8df64041, type: 2}
   - {fileID: 11400000, guid: bfc98a946ab12be4b820561c3b5c2eb3, type: 2}
   - {fileID: 11400000, guid: c315782d210979d49a1da1b79fa56961, type: 2}
+  - {fileID: 11400000, guid: 234abb404eccb5649b374279d3eecf6d, type: 2}
+  - {fileID: 11400000, guid: 7681d9f57980ec94a8b57f8c567cff49, type: 2}
   enemyCardSet:
   - {fileID: 11400000, guid: bf255df69aba40247a27225a8df64041, type: 2}
   - {fileID: 11400000, guid: 429aad2f3bdb7ed40bbd26ac12f086cc, type: 2}

@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6993741618c251040b1859a56268340e, type: 3}
+  m_Name: Morris
+  m_EditorClassIdentifier: 
+  timeCost: 5
+  icon: {fileID: 0}
+  title: Morris Worm
+  description: This worm was active in 1988 and almost took out the internet. It
+    worked by exploiting vunerabilities on networkd and replicating itselfon unifected
+    networks. Unfortunatly it also replicated it self on infected networks as well.
+    Deal fatal damage to all enemies.
+  attackDamage: 50

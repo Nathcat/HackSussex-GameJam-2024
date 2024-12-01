@@ -1,3 +1,6 @@
+using System.Collections.Generic;
+using Unity.Collections.LowLevel.Unsafe;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.XR;
 
@@ -13,13 +16,14 @@ public class NewHandCard : Card
 
     public override bool IsSelf()
     {
-        return false;
+        return true;
     }
 
     protected override void PlayCard(Combatant combatant)
     {
+        GameObject player = GameObject.Find("Player");
         GameObject hand = GameObject.Find("FightController");
-        hand.GetComponent<HandOrganiser>().Generate(hand.GetComponent<HandOrganiser>().hold_gen);
+        player.GetComponent<Combatant>().createDeck(hand.GetComponent<FightController>().playerCardSet, 7);
     }
 
 }

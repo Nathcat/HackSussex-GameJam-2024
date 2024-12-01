@@ -15,6 +15,7 @@ MonoBehaviour:
   timeCost: 3
   icon: {fileID: 0}
   title: Hashing Algorithm
-  description: The hashing algorithm remaps all your cards to new values in the data
-    structure casuing you to get a new hand.
+  description: A hashing algorithm works by passing a data struture through a function
+    to get new values in order to store the values in a smaller data structure. Redraw
+    your hand !
   attackDamage: 0

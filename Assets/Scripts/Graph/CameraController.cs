@@ -45,17 +45,17 @@ public class CameraController : MonoBehaviour
         RaycastHit hit;
         if (Input.GetMouseButtonDown(0) && Physics.Raycast(ray.origin, ray.direction, out hit, Mathf.Infinity)) {
             if (hit.collider.gameObject.CompareTag("Node")) {
-                if (hit.collider.gameObject == graphRenderer.graph.levels[graphRenderer.graph.levels.Count - 1][0].obj) {
+                /*if (hit.collider.gameObject == graphRenderer.graph.levels[graphRenderer.graph.levels.Count - 1][0].obj) {
                     SceneManager.LoadScene("WinScene");
                     PlayerPrefs.DeleteAll();
                     return;
-                }
+                }*/
 
                 if (hit.collider.gameObject == targetNode) {
-                    PlayerPrefs.SetInt("InitFuel", fuel);
+                    /*PlayerPrefs.SetInt("InitFuel", fuel);
                     PlayerPrefs.SetInt("InitTargetLevel", targetNode.GetComponent<NodeComponent>().level);
                     PlayerPrefs.SetInt("InitTargetIndex", targetNode.GetComponent<NodeComponent>().index);
-                    SceneManager.LoadScene("FightScene");
+                    SceneManager.LoadScene("FightScene");*/
                     return;
                 }
 
@@ -162,6 +162,16 @@ public class CameraController : MonoBehaviour
     }
 
     public void LoadLevel() {
-        SceneManager.LoadScene("FightScene");
+        PlayerPrefs.SetInt("InitFuel", fuel);
+        PlayerPrefs.SetInt("InitTargetLevel", targetNode.GetComponent<NodeComponent>().level);
+        PlayerPrefs.SetInt("InitTargetIndex", targetNode.GetComponent<NodeComponent>().index);
+
+        if (targetNode.GetComponent<NodeComponent>().level == (graphRenderer.graph.levels.Count - 1)) {
+            Debug.LogError("This would be the boss scene!");
+            PlayerPrefs.DeleteAll();
+        }
+        else {
+            SceneManager.LoadScene("FightScene");
+        }
     }
 }

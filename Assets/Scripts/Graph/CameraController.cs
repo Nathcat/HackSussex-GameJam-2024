@@ -14,6 +14,9 @@ public class CameraController : MonoBehaviour
     public TMP_Text fuelText;
     public GameObject nodeBorderPrefab;
     private GameObject currentNodeBorder;
+    public AudioClip nodeSelect;
+    public AudioClip menuSelect;
+    public AudioClip shipTravel;
 
     public void Start() {
         if (PlayerPrefs.HasKey("InitFuel")) {
@@ -45,7 +48,7 @@ public class CameraController : MonoBehaviour
 
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
-        if (Input.GetMouseButtonDown(0) && Physics.Raycast(ray.origin, ray.direction, out hit, Mathf.Infinity)) {
+        if (!canvas.activeSelf && Input.GetMouseButtonDown(0) && Physics.Raycast(ray.origin, ray.direction, out hit, Mathf.Infinity)) {
             if (hit.collider.gameObject.CompareTag("Node")) {
                 /*if (hit.collider.gameObject == graphRenderer.graph.levels[graphRenderer.graph.levels.Count - 1][0].obj) {
                     SceneManager.LoadScene("WinScene");
@@ -61,6 +64,8 @@ public class CameraController : MonoBehaviour
                     return;
                 }
 
+                AudioSource.PlayClipAtPoint(nodeSelect, Camera.main.transform.position);
+
                 foreach (Edge e in targetNode.GetComponent<NodeComponent>().node.edges) {
                     if (e.B.obj == hit.collider.gameObject) {
                         if (fuel >= e.weight) {
@@ -73,9 +78,13 @@ public class CameraController : MonoBehaviour
                             canvas.transform.GetChild(3).GetComponent<Button>().onClick.RemoveAllListeners();
 
                             canvas.transform.GetChild(1).GetComponent<Button>().onClick.AddListener(delegate {
+                                AudioSource.PlayClipAtPoint(menuSelect, Camera.main.transform.position);
+                                
                                 targetNode = hit.collider.gameObject;
                                 fuel -= e.weight;
                                 canvas.gameObject.SetActive(false);
+
+                                AudioSource.PlayClipAtPoint(shipTravel, Camera.main.transform.position);
 
                                 if (currentNodeBorder != null) {
                                     Destroy(currentNodeBorder);
@@ -86,6 +95,7 @@ public class CameraController : MonoBehaviour
                             });
 
                             canvas.transform.GetChild(2).GetComponent<Button>().onClick.AddListener(delegate {
+                                AudioSource.PlayClipAtPoint(menuSelect, Camera.main.transform.position);
                                 canvas.gameObject.SetActive(false);
                             });
 
@@ -101,6 +111,7 @@ public class CameraController : MonoBehaviour
                             canvas.transform.GetChild(3).GetComponent<Button>().onClick.RemoveAllListeners();
 
                             canvas.transform.GetChild(3).GetComponent<Button>().onClick.AddListener(delegate {
+                                AudioSource.PlayClipAtPoint(menuSelect, Camera.main.transform.position);
                                 canvas.gameObject.SetActive(false);
                             });
 
@@ -118,9 +129,13 @@ public class CameraController : MonoBehaviour
                             canvas.transform.GetChild(3).gameObject.SetActive(false);
                             
                             canvas.transform.GetChild(1).GetComponent<Button>().onClick.AddListener(delegate {
+                                AudioSource.PlayClipAtPoint(menuSelect, Camera.main.transform.position);
+
                                 targetNode = hit.collider.gameObject;
                                 fuel -= e.weight;
                                 canvas.gameObject.SetActive(false);
+
+                                AudioSource.PlayClipAtPoint(shipTravel, Camera.main.transform.position);
 
                                 if (currentNodeBorder != null) {
                                     Destroy(currentNodeBorder);
@@ -131,6 +146,7 @@ public class CameraController : MonoBehaviour
                             });
 
                             canvas.transform.GetChild(2).GetComponent<Button>().onClick.AddListener(delegate {
+                                AudioSource.PlayClipAtPoint(menuSelect, Camera.main.transform.position);
                                 canvas.gameObject.SetActive(false);
                             });
 
@@ -143,6 +159,7 @@ public class CameraController : MonoBehaviour
                             canvas.transform.GetChild(3).gameObject.SetActive(true);
 
                             canvas.transform.GetChild(3).GetComponent<Button>().onClick.AddListener(delegate {
+                                AudioSource.PlayClipAtPoint(menuSelect, Camera.main.transform.position);
                                 canvas.gameObject.SetActive(false);
                             });
 

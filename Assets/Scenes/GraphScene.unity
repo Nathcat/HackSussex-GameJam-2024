@@ -278,6 +278,9 @@ MonoBehaviour:
   canvas: {fileID: 2092355533}
   fuelText: {fileID: 2102926940}
   nodeBorderPrefab: {fileID: 5977891489533341170, guid: 4868724ff3a780f4dacb8e6395850f15, type: 3}
+  nodeSelect: {fileID: 8300000, guid: f152c2f17d5b11e44b83db870ca8b25e, type: 3}
+  menuSelect: {fileID: 8300000, guid: 48c05cf2216749944a9e53ab97795198, type: 3}
+  shipTravel: {fileID: 8300000, guid: 7e6d66b38396f9c4b862d3e7346a294a, type: 3}
 --- !u!1 &184715867
 GameObject:
   m_ObjectHideFlags: 0
@@ -2361,7 +2364,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 72
+  m_fontSize: 44.4
   m_fontSizeBase: 46.3
   m_fontWeight: 400
   m_enableAutoSizing: 1

@@ -1,3 +1,4 @@
+using System.Linq;
 using UnityEngine;
 using UnityEngine.XR;
 
@@ -31,14 +32,18 @@ public class MouseScript : MonoBehaviour
         {
             if (hit.collider.gameObject.CompareTag("combatant"))
             {
-                card.GetComponent<CardRenderer>().GetCard().Play(hit.collider.gameObject.GetComponent<Combatant>());
-                hand = GameObject.Find("Hand(Clone)");
+                Card cardClass = card.GetComponent<CardRenderer>().GetCard();
+                FightController fightController = hand.GetComponent<FightController>();
+                cardClass.Play(hit.collider.gameObject.GetComponent<Combatant>());
+                fightController.handPrefab.GetComponent<HandOrganiser>().funky_store.Remove(card);
+                fightController.combatants[fightController.currentCombatant].playCard(cardClass);
                 Destroy(card);
-                
+  
                 card_held = false;
                 card = null;
-                hand.GetComponent<HandOrganiser>().funky_store.Remove(card);
-                hand.GetComponent<HandOrganiser>().sort();
+
+                fightController.handPrefab.GetComponent<HandOrganiser>().Generate(fightController.combatants[fightController.currentCombatant].getDeck().ToList());
+                
             }
             else if (hit.collider.gameObject.CompareTag("card") && (!card_held)) 
             {

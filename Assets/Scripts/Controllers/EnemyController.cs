@@ -19,6 +19,8 @@ public class EnemyController : Combatant
             fightController.combatants[0]
         );
 
+        base.playCard(base.chosenCard);
+
         // Show the chosen card here?
 
         endTurn();

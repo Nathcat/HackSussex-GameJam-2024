@@ -79,8 +79,8 @@ public class Combatant : MonoBehaviour
     /// </summary>
     /// <param name="card">The card to play</param>
     /// <param name="target">Who to target with the card</param>
-    public void playCard(Card card, Combatant target) {
-        Debug.LogError("Not implemented!");
+    public void playCard(Card card) {
+        deck.Remove(card);
     }
 
     virtual public void startTurn() {

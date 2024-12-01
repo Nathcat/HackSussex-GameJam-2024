@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -11,6 +12,12 @@ public class HandOrganiser : MonoBehaviour
     [SerializeField] private List<Card> hold_gen = new List<Card>();
     public void Generate(List<Card> cards) 
     {
+        foreach (Transform child in transform)
+        {
+            Destroy(child.gameObject);
+            funky_store = new List<GameObject>();
+        }
+
         for (int index = 0; index < cards.Count; index++) 
         { hold_gen.Add(cards[index]); }
            
@@ -21,41 +28,17 @@ public class HandOrganiser : MonoBehaviour
         int size = cards.Count;
         print(max_count);
 
-        if ((size % 2) == 0)
-        {
-            start_pos = 0 - ((size / 2) * width);
-            for (int index = 0; index < cards.Count; index++)
-            {
-                GameObject card_x = Instantiate(card_prefab, transform);
-                card_x.GetComponent<CardRenderer>().Render(cards[index]);
-                card_x.transform.localPosition = new Vector3((start_pos + (width / 2)), 0, 0);
-                start_pos = start_pos + width;
-            }
-        }
-        else if (!((size % 2) == 0)) 
-        {
-            GameObject card_x = Instantiate(card_prefab, transform);
-            card_x.GetComponent<CardRenderer>().Render(cards[0]);
-            cards.RemoveAt(0);
-            card_x.transform.localPosition = new Vector3(0.0f, 0, 0);
+        float totalWidth = width * cards.Count;
 
-            start_pos = 0 - (((size / 2) * width) + (width / 2));
-            for (int index = 0; index < cards.Count/2; index++)
-            {
-                card_x = Instantiate(card_prefab, transform);
-                card_x.GetComponent<CardRenderer>().Render(cards[index]);
-                card_x.transform.localPosition = new Vector3((start_pos + (width / 2)), 0, 0);
-                start_pos = start_pos + width;
-            }
+        int i = 0;
+        for (float X = -(totalWidth / 2f) + (width / 2f); X <= (totalWidth / 2f) - (width / 2f); X += width)
+        {
+            GameObject obj = Instantiate(card_prefab, new Vector3(X, -3.38f, 1f), new Quaternion());
+            obj.transform.SetParent(transform);
+            obj.GetComponent<CardRenderer>().Render(cards[i]);
+            i++;
 
-            start_pos = 0 + (width/2);
-            for (int index = ((cards.Count/2 )); index < cards.Count; index++)
-            {
-                card_x = Instantiate(card_prefab, transform);
-                card_x.GetComponent<CardRenderer>().Render(cards[index]);
-                card_x.transform.localPosition = new Vector3((start_pos + (width / 2)), 0, 0);
-                start_pos = start_pos + width;
-            }
+            funky_store.Add(obj);
         }
     }
 
@@ -72,6 +55,7 @@ public class HandOrganiser : MonoBehaviour
 
             if ((size % 2) == 0)
             {
+                print("even");
                 start_pos = 0 - ((size / 2) * width);
                 for (int index = 0; index < funky_store.Count; index++)
                 {
@@ -82,10 +66,11 @@ public class HandOrganiser : MonoBehaviour
             }
             else if (!((size % 2) == 0))
             {
+                print("odd");
                 funky_store[0].transform.position = new Vector3(0.0f, -3.38f, 1f);
-                funky_store.RemoveAt(0);
-                start_pos = 0 - (((size / 2) * width) + (width / 2));
-                for (int index = 0; index < funky_store.Count / 2; index++)
+                
+                start_pos = 0 - ((Mathf.Floor(funky_store.Count / 2) * width) + (width / 2));
+                for (int index = 0; index < MathF.Floor(funky_store.Count / 2)+ 1; index++)
                 {
 
                     funky_store[index].transform.position = new Vector3((start_pos + (width / 2)), -3.38f, 1f);
@@ -94,7 +79,7 @@ public class HandOrganiser : MonoBehaviour
                 }
 
                 start_pos = 0 + (width / 2);
-                for (int index = ((funky_store.Count / 2)); index < funky_store.Count; index++)
+                for (int index = (int)(MathF.Floor(funky_store.Count / 2))+1; index < funky_store.Count; index++)
                 {
                     funky_store[index].transform.position = new Vector3((start_pos + (width / 2)), -3.38f, 1f);
                     start_pos = start_pos + width;

@@ -13,6 +13,9 @@ public class FightController : MonoBehaviour
     public GameObject enemyPrefab;
     public Vector3[] enemySpawnPositions;
 
+    public GameObject handPrefabAsset;
+    public GameObject handPrefab;
+
     public void Start() {
         int enemyCount = Random.Range(1, 3);
         combatants = new List<Combatant>();
@@ -26,6 +29,10 @@ public class FightController : MonoBehaviour
                 new Quaternion()
             ).GetComponent<Combatant>());
         }
+
+        handPrefab = Instantiate(handPrefabAsset);
+
+        ((PlayerController)combatants[0]).handPrefab = handPrefab.GetComponent<HandOrganiser>(); ;
 
         playTurn();
     }

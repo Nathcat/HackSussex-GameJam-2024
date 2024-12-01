@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class PlayerController : Combatant
 {
-    [SerializeField] private HandOrganiser handPrefab;
+    [SerializeField] public HandOrganiser handPrefab;
 
     override public void startTurn() {
         base.startTurn();
@@ -12,7 +12,7 @@ public class PlayerController : Combatant
             base.createDeck(fightController.playerCardSet, 7);
         }
 
-        Instantiate(handPrefab).Generate(getDeck().ToList());
+        handPrefab.Generate(getDeck().ToList());
     }
 
     override public void endTurn() {

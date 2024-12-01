@@ -938,6 +938,7 @@ MonoBehaviour:
   maxWeight: 5
   nodePrefab: {fileID: 9052376033211140410, guid: 9614d9a728fe71046af653d4f3082145, type: 3}
   edgePrefab: {fileID: 18607537986525405, guid: af7b6572d5a386a4da778d5c4a8e474a, type: 3}
+  mothershipSprite: {fileID: 21300000, guid: f7ada35f6c1bfc64bbe027b1a0ba81d3, type: 3}
 --- !u!4 &856719861
 Transform:
   m_ObjectHideFlags: 0

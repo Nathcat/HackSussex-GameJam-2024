@@ -12,6 +12,7 @@ public class GraphRenderer : MonoBehaviour
 
     public GameObject nodePrefab;
     public GameObject edgePrefab;
+    public Sprite mothershipSprite;
 
     void Start()
     {
@@ -35,6 +36,8 @@ public class GraphRenderer : MonoBehaviour
                 nc.index = x;
             }
         }
+
+        graph.levels[graph.levels.Count - 1][0].obj.GetComponent<SpriteRenderer>().sprite = mothershipSprite;
 
         for (int i = 0; i < graph.levels.Count; i++) {
             for (int x = 0; x < graph.levels[i].Count; x++) {

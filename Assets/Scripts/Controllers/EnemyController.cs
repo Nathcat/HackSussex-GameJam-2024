@@ -25,11 +25,7 @@ public class EnemyController : Combatant
             Random.Range(0, base.getDeck().Length - 1)
         ];
 
-        base.chosenCard.Play(
-            fightController.combatants[0]
-        );
-
-        base.playCard(base.chosenCard);
+        base.playCard(base.chosenCard, fightController.combatants[0]);
 
         // Show the chosen card here?
 

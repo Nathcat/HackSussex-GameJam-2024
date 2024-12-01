@@ -34,9 +34,8 @@ public class MouseScript : MonoBehaviour
             {
                 Card cardClass = card.GetComponent<CardRenderer>().GetCard();
                 FightController fightController = hand.GetComponent<FightController>();
-                cardClass.Play(hit.collider.gameObject.GetComponent<Combatant>());
                 fightController.handPrefab.GetComponent<HandOrganiser>().funky_store.Remove(card);
-                fightController.combatants[fightController.currentCombatant].playCard(cardClass);
+                fightController.combatants[fightController.currentCombatant].playCard(cardClass, hit.collider.gameObject.GetComponent<Combatant>());
                 Destroy(card);
   
                 card_held = false;

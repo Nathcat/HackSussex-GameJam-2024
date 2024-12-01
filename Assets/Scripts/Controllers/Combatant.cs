@@ -22,7 +22,7 @@ public class Combatant : MonoBehaviour
     }
 
     virtual public void Start() {}
-    
+
     /// <summary>
     /// Create a new deck for this combatant, erasing the old deck if one existed
     /// </summary>
@@ -81,7 +81,8 @@ public class Combatant : MonoBehaviour
     /// </summary>
     /// <param name="card">The card to play</param>
     /// <param name="target">Who to target with the card</param>
-    public void playCard(Card card) {
+    public void playCard(Card card, Combatant target) {
+        card.Play(target);
         deck.Remove(card);
     }
 

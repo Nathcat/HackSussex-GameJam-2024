@@ -1,31 +1,30 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class TranslateComplexityScript : MonoBehaviour
+﻿public static class TranslateComplexityScript
 {
-    public string ConvertComplexity(int i){
+    public static string ConvertComplexity(int i){
         switch(i){
+            case 0:
+                return "1";
+
             case 1:
-                return "Constant";
+                return "log n";
 
             case 2:
-                return "Logarithmic";
+                return "n";
 
             case 3:
-                return "Linear";
+                return "n log n";
 
             case 4:
-                return "Loglinear";
+                return "n²";
 
             case 5:
-                return "quadratic";
+                return "2ⁿ";
 
 
 
 
 
         }
-        return "either not implemented or just completely fucked up";
+        return "unknown";
     }
 }

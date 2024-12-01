@@ -128,6 +128,7 @@ MonoBehaviour:
   defence: 0
   chosenCard: {fileID: 0}
   fightController: {fileID: 0}
+  deathSound: {fileID: 8300000, guid: a22e57fe40111e743a22ae22b48d40fc, type: 3}
   handPrefab: {fileID: 1825799850354452362, guid: 988f84d22f576424bad242c393822a13, type: 3}
 --- !u!65 &7522893731958319206
 BoxCollider:

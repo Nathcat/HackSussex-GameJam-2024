@@ -33,7 +33,7 @@ public class FightController : MonoBehaviour
 
         handPrefab = Instantiate(handPrefabAsset);
 
-        ((PlayerController)combatants[0]).handPrefab = handPrefab.GetComponent<HandOrganiser>(); ;
+        ((PlayerController)combatants[0]).hand = handPrefab.GetComponent<HandOrganiser>(); ;
 
         playTurn();
     }

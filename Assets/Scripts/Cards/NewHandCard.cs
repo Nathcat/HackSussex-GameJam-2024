@@ -16,7 +16,7 @@ public class NewHandCard : Card
         return false;
     }
 
-    public override void Play(Combatant combatant)
+    protected override void PlayCard(Combatant combatant)
     {
         GameObject hand = GameObject.Find("FightController");
         hand.GetComponent<HandOrganiser>().Generate(hand.GetComponent<HandOrganiser>().hold_gen);

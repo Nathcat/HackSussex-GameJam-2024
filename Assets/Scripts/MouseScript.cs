@@ -12,6 +12,7 @@ public class MouseScript : MonoBehaviour
     [SerializeField] private GameObject card = null;
     [SerializeField] private Vector3 mouse_position;
     [SerializeField] GameObject hand = null;
+    [SerializeField] private AudioClip pickupSound;
     private PlayerController playerController;
 
     private void Start()
@@ -60,6 +61,7 @@ public class MouseScript : MonoBehaviour
                     card = hit.collider.gameObject;
                     card.gameObject.GetComponent<Collider>().enabled = false;
                     card_origin = card.transform.position;
+                    AudioSource.PlayClipAtPoint(pickupSound, hit.point);
                 }
                 if (card_held) 
                 { 

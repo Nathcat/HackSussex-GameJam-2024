@@ -225,6 +225,7 @@ MonoBehaviour:
   defence: 0
   chosenCard: {fileID: 0}
   fightController: {fileID: 0}
+  deathSound: {fileID: 8300000, guid: a22e57fe40111e743a22ae22b48d40fc, type: 3}
   nextCard: {fileID: 0}
 --- !u!65 &-1223651527130026320
 BoxCollider:

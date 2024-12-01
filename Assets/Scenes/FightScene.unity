@@ -242,6 +242,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5794498635172110621, guid: af6588187f7dfba478340aecc3c27d3f, type: 3}
+      propertyPath: hand
+      value: 
+      objectReference: {fileID: 1851964406}
+    - target: {fileID: 5794498635172110621, guid: af6588187f7dfba478340aecc3c27d3f, type: 3}
+      propertyPath: newDeckSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 978f910f39db8b945ac7a326c308e1e5, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -754,6 +762,7 @@ MonoBehaviour:
   card: {fileID: 0}
   mouse_position: {x: 0, y: 0, z: 0}
   hand: {fileID: 0}
+  pickupSound: {fileID: 8300000, guid: bab2c96bdb1377841a67b434e7406b86, type: 3}
 --- !u!1 &556139896
 GameObject:
   m_ObjectHideFlags: 0

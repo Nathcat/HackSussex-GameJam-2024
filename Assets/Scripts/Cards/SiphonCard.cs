@@ -16,7 +16,7 @@ public class SiphonCard : Card
         return true;
     }
 
-    public override void Play(Combatant combatant)
+    protected override void PlayCard(Combatant combatant)
     {
         combatant.updateHealth(-damage);
         combatant.updateEnergy(energy);

@@ -15,7 +15,7 @@ public class AttackCard : Card
         return false;
     }
 
-    public override void Play(Combatant combatant)
+    protected override void PlayCard(Combatant combatant)
     {
         combatant.updateHealth(-attackDamage);
     }

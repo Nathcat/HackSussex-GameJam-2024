@@ -13,14 +13,17 @@ public class Combatant : MonoBehaviour
     private List<Card> deck = new List<Card>();
     [SerializeField] private int health;
     [SerializeField] private int energy;
-    private int baseEnergy = 10;
     [SerializeField] private int defence;
     [HideInInspector] public Card chosenCard;
     [HideInInspector] public FightController fightController;
+    [SerializeField] private AudioClip deathSound;
+    protected int baseEnergy;
+    protected int baseHealth;
 
     public void Awake() {
         fightController = FindObjectOfType<FightController>();
         baseEnergy = energy;
+        baseHealth = health;
     }
 
     /// <summary>
@@ -66,11 +69,12 @@ public class Combatant : MonoBehaviour
 
         if (health <= 0) {
             gameObject.tag = "dead";
+            AudioSource.PlayClipAtPoint(deathSound, transform.position);
         }
     }
 
     public int getDefence() { return defence; }
-    public void updateDefence(int delta) { defence += delta; }
+    public void updateDefence(int delta) { defence = Mathf.Clamp(defence + delta, 0, baseHealth); }
 
     public int getEnergy() { return energy < 0 ? 0 : energy; }
 
@@ -80,14 +84,14 @@ public class Combatant : MonoBehaviour
     /// Change the value of energy by delta
     /// </summary>
     /// <param name="delta">The value to change this combatant's health by, can be +ve or -ve</param>
-    public void updateEnergy(int delta) { energy += delta; }
+    public void updateEnergy(int delta) { energy = Mathf.Clamp(energy + delta, 0, baseEnergy); }
 
     /// <summary>
     /// Use the specified card on the target combatant
     /// </summary>
     /// <param name="card">The card to play</param>
     /// <param name="target">Who to target with the card</param>
-    public void playCard(Card card, Combatant target) {
+    public virtual void playCard(Card card, Combatant target) {
         updateEnergy(-card.GetTimeCost());
         card.Play(target);
         deck.Remove(card);

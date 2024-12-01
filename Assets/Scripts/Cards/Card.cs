@@ -9,8 +9,15 @@ public abstract class Card : ScriptableObject
     [SerializeField] private Sprite icon;
     [SerializeField] private string title;
     [SerializeField] private string description;
+    [SerializeField] private AudioClip sound;
 
-    public abstract void Play(Combatant combatant);
+    protected abstract void PlayCard(Combatant combatant);
+
+    public void Play(Combatant combatant)
+    {
+        AudioSource.PlayClipAtPoint(sound, combatant.transform.position);
+        PlayCard(combatant);
+    }
 
     public int GetTimeCost()
     {

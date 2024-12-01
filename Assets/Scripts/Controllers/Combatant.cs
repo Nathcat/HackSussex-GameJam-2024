@@ -21,6 +21,8 @@ public class Combatant : MonoBehaviour
         fightController = FindObjectOfType<FightController>();
     }
 
+    virtual public void Start() {}
+    
     /// <summary>
     /// Create a new deck for this combatant, erasing the old deck if one existed
     /// </summary>

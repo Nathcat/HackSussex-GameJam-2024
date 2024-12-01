@@ -93,7 +93,7 @@ public class BogoSortCard : Card
                 for (int i = 1; i < combatants.Count; i++)
                 {
                     combatants[i].updateHealth(-attackDamage);
-                    CardAnimation.Play(attackCard, combatants[i].transform.position);
+                    CardAnimation.Play(spreadCard, combatants[i].transform.position);
                 }
             }
             Util.RunAfter(1f, () => playagain(combatant));

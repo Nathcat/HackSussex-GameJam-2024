@@ -45,7 +45,7 @@ public class FightController : MonoBehaviour
     public void nextTurn() {
         currentCombatant = (currentCombatant + 1) % combatants.Count;
 
-        if (combatants[currentCombatant].getHealth() == 0) {
+        while (combatants[currentCombatant].getHealth() == 0) {
             if (currentCombatant == 0) {
                 SceneManager.LoadScene("GameOver");
                 return;

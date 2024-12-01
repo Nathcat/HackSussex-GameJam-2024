@@ -17,6 +17,8 @@ public class FightController : MonoBehaviour
     public GameObject handPrefabAsset;
     public GameObject handPrefab;
 
+    [SerializeField] private AudioClip buttonSFX;
+
     public void Start() {
         Random.InitState((int)System.DateTime.Now.Ticks);
 
@@ -71,6 +73,8 @@ public class FightController : MonoBehaviour
     }
 
     public void endPlayerTurn() {
+        if (currentCombatant != 0) return;
+        AudioSource.PlayClipAtPoint(buttonSFX, Vector3.zero);
         combatants[0].endTurn();
     }
 }

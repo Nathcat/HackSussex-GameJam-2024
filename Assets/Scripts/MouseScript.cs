@@ -14,15 +14,29 @@ public class MouseScript : MonoBehaviour
     [SerializeField] GameObject hand = null;
     [SerializeField] private AudioClip pickupSound;
     private PlayerController playerController;
+    private FightController fightController;
 
     private void Start()
     {
         playerController = FindObjectOfType<PlayerController>();
+        fightController = FindAnyObjectByType<FightController>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (fightController.currentCombatant != 0)
+        {
+            if (card_held)
+            {
+                card.transform.position = card_origin;
+                card_held = false;
+                card.gameObject.GetComponent<Collider>().enabled = true;
+                card = null;
+            }
+            return;
+        }
+
         hand = GameObject.Find("FightController");
         if (hand.GetComponent<FightController>().combatants.Count == 0) 
         {

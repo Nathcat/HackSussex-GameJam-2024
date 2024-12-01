@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SpriteAnimator : MonoBehaviour
 {
@@ -7,6 +8,7 @@ public class SpriteAnimator : MonoBehaviour
     [SerializeField] private float framePeriod;
 
     private SpriteRenderer spriteRenderer;
+    private Image imageRenderer;
     private Combatant combatant;
     private float frameTime = 0;
     private int frameIndex = 0;
@@ -15,8 +17,10 @@ public class SpriteAnimator : MonoBehaviour
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
-        combatant = GetComponent<Combatant>();
-        spriteRenderer.sprite = aliveFrames[0];
+        TryGetComponent(out imageRenderer);
+        TryGetComponent(out spriteRenderer);
+        if (spriteRenderer == null) imageRenderer.sprite = aliveFrames[0];
+        else spriteRenderer.sprite = aliveFrames[0];
     }
 
     void Update()
@@ -29,7 +33,8 @@ public class SpriteAnimator : MonoBehaviour
             frameIndex++;
             frameTime = 0;
             if (frameIndex >= sprites.Length) frameIndex = 0;
-            spriteRenderer.sprite = sprites[frameIndex];
+            if (spriteRenderer == null) imageRenderer.sprite = sprites[frameIndex];
+            else spriteRenderer.sprite = sprites[frameIndex];
         }
     }
 }

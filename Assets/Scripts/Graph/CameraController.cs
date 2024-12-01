@@ -24,7 +24,14 @@ public class CameraController : MonoBehaviour
             PlayerPrefs.DeleteKey("AddFuel");
         }
 
+        if (PlayerPrefs.HasKey("InitTargetLevel") && PlayerPrefs.HasKey("InitTargetIndex")) {
+            int level = PlayerPrefs.GetInt("InitTargetLevel");
+            int index = PlayerPrefs.GetInt("InitTargetIndex");
+            targetNode = graphRenderer.graph.levels[level][index].obj;
+        }
+        else {
         targetNode = graphRenderer.graph.rootNode.obj;
+        }
     }
 
     public void Update() {
@@ -36,6 +43,8 @@ public class CameraController : MonoBehaviour
             if (hit.collider.gameObject.CompareTag("Node")) {
                 if (hit.collider.gameObject == targetNode) {
                     PlayerPrefs.SetInt("InitFuel", fuel);
+                    PlayerPrefs.SetInt("InitTargetLevel", targetNode.GetComponent<NodeComponent>().level);
+                    PlayerPrefs.SetInt("InitTargetIndex", targetNode.GetComponent<NodeComponent>().index);
                     SceneManager.LoadScene("FightScene");
                     return;
                 }

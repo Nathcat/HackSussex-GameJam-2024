@@ -29,7 +29,10 @@ public class GraphRenderer : MonoBehaviour
                     new Quaternion()
                 );
 
-                graph.levels[i][x].obj.AddComponent<NodeComponent>().node = graph.levels[i][x];
+                NodeComponent nc = graph.levels[i][x].obj.AddComponent<NodeComponent>();
+                nc.node = graph.levels[i][x];
+                nc.level = i;
+                nc.index = x;
             }
         }
 

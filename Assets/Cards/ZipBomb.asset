@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: ZipBomb
   m_EditorClassIdentifier: 
   timeCost: 2
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: d4fa93112011a86489c81acfff6f9198, type: 3}
   title: Zip Bomb
   description: The Zip bomb works by aprealling as a small file only to decompress
     to a much larger file. Deal 1 damage to all enemies
+  sound: {fileID: 8300000, guid: 5c6e355939329e8438752048945a379c, type: 3}
   attackDamage: 1

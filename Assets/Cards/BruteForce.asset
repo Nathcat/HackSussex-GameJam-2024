@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: befeff70be0f74144ac3839f9f9c2a05, type: 3}
+  m_Name: BruteForce
+  m_EditorClassIdentifier: 
+  timeCost: 1
+  icon: {fileID: 21300000, guid: 7ca364a9aeb86ed41b586332c4f8b624, type: 3}
+  title: Brute Force
+  description: Repeatidly tries solutions until it finds one that works. Deal 2 damage
+    to an enemy
+  sound: {fileID: 8300000, guid: 3157f1a77236eb04dbde2ab378711a86, type: 3}
+  attackDamage: 2

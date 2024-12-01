@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d9237aa38d42304cb6c9fb163360842, type: 3}
+  m_Name: InputValidation
+  m_EditorClassIdentifier: 
+  timeCost: 1
+  icon: {fileID: 21300000, guid: a241a30c4bcdaae4aa21d9f4fdd04b52, type: 3}
+  title: 'Input Validation '
+  description: Inpuy validation is checking an input before using it. This can come
+    in many forms such as checking it is the expected type or checking it isnt null.
+    This card adds 1 defence point.
+  sound: {fileID: 8300000, guid: d65cc2d4cf03e194886344174ce068c0, type: 3}
+  defencePoints: 1

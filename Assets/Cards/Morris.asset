@@ -13,10 +13,11 @@ MonoBehaviour:
   m_Name: Morris
   m_EditorClassIdentifier: 
   timeCost: 5
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: d4fa93112011a86489c81acfff6f9198, type: 3}
   title: Morris Worm
   description: This worm was active in 1988 and almost took out the internet. It
     worked by exploiting vunerabilities on networkd and replicating itselfon unifected
     networks. Unfortunatly it also replicated it self on infected networks as well.
     Deal fatal damage to all enemies.
+  sound: {fileID: 8300000, guid: 5c6e355939329e8438752048945a379c, type: 3}
   attackDamage: 50

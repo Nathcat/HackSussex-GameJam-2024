@@ -13,10 +13,11 @@ MonoBehaviour:
   m_Name: Enigma
   m_EditorClassIdentifier: 
   timeCost: 4
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: decd156a511900449aeb878db6a7f99e, type: 3}
   title: Enigma
   description: The enigma used a polyalphabetic substitution cipher to encrypt messages.
     It was used in WWII by the gemans and was cracked by Alan Turing. Take 8 damage
     and gain 2 energy
+  sound: {fileID: 8300000, guid: 3157f1a77236eb04dbde2ab378711a86, type: 3}
   damage: 4
   energy: 2

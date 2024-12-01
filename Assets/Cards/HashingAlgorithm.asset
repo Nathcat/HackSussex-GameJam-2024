@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: HashingAlgorithm
   m_EditorClassIdentifier: 
   timeCost: 3
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 40ddec570faaeb140a590a169d3c549b, type: 3}
   title: Hashing Algorithm
   description: A hashing algorithm works by passing a data struture through a function
     to get new values in order to store the values in a smaller data structure. Redraw
     your hand !
+  sound: {fileID: 8300000, guid: bab2c96bdb1377841a67b434e7406b86, type: 3}
   attackDamage: 0

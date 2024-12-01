@@ -21,8 +21,6 @@ public class Combatant : MonoBehaviour
         fightController = FindObjectOfType<FightController>();
     }
 
-    virtual public void Start() {}
-
     /// <summary>
     /// Create a new deck for this combatant, erasing the old deck if one existed
     /// </summary>
@@ -63,6 +61,10 @@ public class Combatant : MonoBehaviour
         else {
             health += delta;
         }
+
+        if (health <= 0) {
+            gameObject.tag = "Untagged";
+        }
     }
 
     public int getDefence() { return defence; }
@@ -94,24 +96,6 @@ public class Combatant : MonoBehaviour
 
     virtual public void endTurn() {
         Debug.Log(name + " has ended their turn!");
-
-        if (getHealth() == 0) {
-            fightController.combatants.RemoveAt(fightController.currentCombatant);
-            gameObject.tag = null;
-            Debug.Log(name + " is dead!");
-
-            if (fightController.currentCombatant == 0) {
-                SceneManager.LoadScene("GameOver");
-            }
-            else {
-                if (fightController.combatants.Count == 1 && fightController.combatants[0].getHealth() != 0) {
-                    SceneManager.LoadScene("GraphScene");
-                }
-                else {
-                    SceneManager.LoadScene("GameOver");
-                }
-            }
-        }
         
         chosenCard = null;
         fightController.nextTurn();

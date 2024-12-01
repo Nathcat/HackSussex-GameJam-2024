@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class FightController : MonoBehaviour
 {
@@ -17,7 +18,7 @@ public class FightController : MonoBehaviour
     public GameObject handPrefab;
 
     public void Start() {
-        int enemyCount = Random.Range(1, 3);
+        int enemyCount = 3;
         combatants = new List<Combatant>();
 
         combatants.Add(FindObjectOfType<PlayerController>());
@@ -42,7 +43,21 @@ public class FightController : MonoBehaviour
     }
 
     public void nextTurn() {
-        currentCombatant = (currentCombatant + 1) % combatants.Count; 
+        currentCombatant = (currentCombatant + 1) % combatants.Count;
+
+        if (combatants[currentCombatant].getHealth() == 0) {
+            if (currentCombatant == 0) {
+                SceneManager.LoadScene("GameOver");
+            }
+
+            combatants.RemoveAt(currentCombatant);
+            
+            if (combatants.Count == 1) {
+                SceneManager.LoadScene("GraphScene");
+            }
+
+            if (currentCombatant == combatants.Count) currentCombatant = 0;
+        }
         
         playTurn();
     }

@@ -6,8 +6,8 @@ public class EnemyController : Combatant
 {    
     public Card nextCard;
 
-    override public void Start() {
-        base.Start();
+    public void Start() {
+        createDeck(fightController.enemyCardSet, 7);
         nextCard = base.getDeck()[
             Random.Range(0, base.getDeck().Length - 1)
         ];

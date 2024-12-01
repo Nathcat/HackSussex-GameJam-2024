@@ -716,16 +716,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 114a43ceb73c0264cabc28afdc01768b, type: 2}
   - {fileID: 11400000, guid: dfa463a97fd4c534887bca1a1ef1f161, type: 2}
   - {fileID: 11400000, guid: d8274c18ab22a5e47bb191a92f95f6e8, type: 2}
-<<<<<<< Updated upstream
-  - {fileID: 11400000, guid: 5678fee7e6b86494ca5240a213aa8d3e, type: 2}
-  - {fileID: 11400000, guid: c48ebbc1dc59f0e46a48d1187b6fcee1, type: 2}
-  - {fileID: 11400000, guid: 0ddbcffe27f466e43af6ab110e5ddda6, type: 2}
-=======
   - {fileID: 11400000, guid: c48ebbc1dc59f0e46a48d1187b6fcee1, type: 2}
   - {fileID: 11400000, guid: 5678fee7e6b86494ca5240a213aa8d3e, type: 2}
   - {fileID: 11400000, guid: 0ddbcffe27f466e43af6ab110e5ddda6, type: 2}
   - {fileID: 11400000, guid: 8e9c899002642df40bcbc16ab7c0bad8, type: 2}
->>>>>>> Stashed changes
   - {fileID: 11400000, guid: 9871821292537d5429614af22ff3f702, type: 2}
   enemyCardSet:
   - {fileID: 11400000, guid: c48ebbc1dc59f0e46a48d1187b6fcee1, type: 2}

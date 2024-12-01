@@ -6,6 +6,8 @@ TagManager:
   tags:
   - card
   - combatant
+  - Node
+  - dead
   layers:
   - Default
   - TransparentFX

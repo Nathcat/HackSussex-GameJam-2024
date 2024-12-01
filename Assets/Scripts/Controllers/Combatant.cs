@@ -65,7 +65,7 @@ public class Combatant : MonoBehaviour
         }
 
         if (health <= 0) {
-            gameObject.tag = "Untagged";
+            gameObject.tag = "dead";
         }
     }
 

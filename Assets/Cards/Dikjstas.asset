@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: befeff70be0f74144ac3839f9f9c2a05, type: 3}
   m_Name: Dikjstas
   m_EditorClassIdentifier: 
-  timeCost: 0
-  icon: {fileID: 0}
-  title: 
-  description: 
-  sound: {fileID: 0}
-  attackDamage: 0
+  timeCost: 2
+  icon: {fileID: 21300000, guid: 7ca364a9aeb86ed41b586332c4f8b624, type: 3}
+  title: Dijkstra's
+  description: 'Finds the shortest path between two nodes in a graph with no negative
+    weights. Deals 4 damage to enemies '
+  sound: {fileID: 8300000, guid: 3157f1a77236eb04dbde2ab378711a86, type: 3}
+  attackDamage: 4

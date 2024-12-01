@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: befeff70be0f74144ac3839f9f9c2a05, type: 3}
   m_Name: SQLInjection
   m_EditorClassIdentifier: 
-  timeCost: 0
-  icon: {fileID: 0}
-  title: 
-  description: 
-  sound: {fileID: 0}
-  attackDamage: 0
+  timeCost: 1
+  icon: {fileID: 21300000, guid: 7ca364a9aeb86ed41b586332c4f8b624, type: 3}
+  title: SQL Injection
+  description: Inputs SQL into an input variable in an attempt to modify or access
+    a database that is otherwise hidden. Deals 3 damage to enemies
+  sound: {fileID: 8300000, guid: 3157f1a77236eb04dbde2ab378711a86, type: 3}
+  attackDamage: 3

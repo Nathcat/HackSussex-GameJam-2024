@@ -23,6 +23,6 @@ public class CardAnimation : MonoBehaviour
         renderer.color = Color.Lerp(renderer.color, Color.white, Time.deltaTime * 10);
         transform.localScale -= Vector3.one * 8 * Time.deltaTime;
 
-        if (transform.localScale.magnitude < 0.1) Destroy(gameObject);
+        if (transform.localScale.sqrMagnitude < 0.4) Destroy(gameObject);
     }
 }

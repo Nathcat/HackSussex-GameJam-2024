@@ -11,6 +11,7 @@ public class EnemyController : Combatant
         nextCard = base.getDeck()[
             Random.Range(0, base.getDeck().Length - 1)
         ];
+        GetComponentInChildren<ShowIconScript>().ChangeIcon(nextCard);
     }
 
     override public void startTurn() {
@@ -28,6 +29,7 @@ public class EnemyController : Combatant
         base.playCard(base.chosenCard, fightController.combatants[0]);
 
         // Show the chosen card here?
+        GetComponentInChildren<ShowIconScript>().ChangeIcon(nextCard);
 
         endTurn();
     }

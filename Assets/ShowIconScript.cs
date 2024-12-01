@@ -5,17 +5,13 @@ using UnityEngine;
 public class ShowIconScript : MonoBehaviour
 {
     [SerializeField] private SpriteRenderer shownIcon;
-    [SerializeField] private Combatant combatant;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
+    [SerializeField] private EnemyController combatant;
     // Update is called once per frame
-    void Update()
+    
+
+
+    public void ChangeIcon(Card nextcard)
     {
-        //shownIcon.sprite = combatant.getChosenCard().GetIcon();
+        shownIcon.sprite = nextcard.GetIcon();
     }
 }

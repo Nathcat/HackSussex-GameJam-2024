@@ -717,9 +717,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 114a43ceb73c0264cabc28afdc01768b, type: 2}
   - {fileID: 11400000, guid: dfa463a97fd4c534887bca1a1ef1f161, type: 2}
   - {fileID: 11400000, guid: d8274c18ab22a5e47bb191a92f95f6e8, type: 2}
-  - {fileID: 11400000, guid: 5678fee7e6b86494ca5240a213aa8d3e, type: 2}
   - {fileID: 11400000, guid: c48ebbc1dc59f0e46a48d1187b6fcee1, type: 2}
+  - {fileID: 11400000, guid: 5678fee7e6b86494ca5240a213aa8d3e, type: 2}
   - {fileID: 11400000, guid: 0ddbcffe27f466e43af6ab110e5ddda6, type: 2}
+  - {fileID: 11400000, guid: 8e9c899002642df40bcbc16ab7c0bad8, type: 2}
   - {fileID: 11400000, guid: 9871821292537d5429614af22ff3f702, type: 2}
   enemyCardSet:
   - {fileID: 11400000, guid: c48ebbc1dc59f0e46a48d1187b6fcee1, type: 2}
@@ -766,20 +767,7 @@ MonoBehaviour:
   card: {fileID: 0}
   mouse_position: {x: 0, y: 0, z: 0}
   hand: {fileID: 0}
-  pickupSound: {fileID: 8300000, guid: bab2c96bdb1377841a67b434e7406b86, type: 3}
---- !u!114 &554346077
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 554346072}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6883d8f464ce60f4fa5286cbd2fe4239, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animationPrefab: {fileID: 3519078214387003502, guid: 75781951294e62342abf37dc171dca12, type: 3}
+  pickupSound: {fileID: 0}
 --- !u!1 &556139896
 GameObject:
   m_ObjectHideFlags: 0

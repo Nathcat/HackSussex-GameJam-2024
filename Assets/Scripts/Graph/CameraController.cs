@@ -30,7 +30,7 @@ public class CameraController : MonoBehaviour
             targetNode = graphRenderer.graph.levels[level][index].obj;
         }
         else {
-        targetNode = graphRenderer.graph.rootNode.obj;
+            targetNode = graphRenderer.graph.rootNode.obj;
         }
     }
 
@@ -41,6 +41,12 @@ public class CameraController : MonoBehaviour
         RaycastHit hit;
         if (Input.GetMouseButtonDown(0) && Physics.Raycast(ray.origin, ray.direction, out hit, Mathf.Infinity)) {
             if (hit.collider.gameObject.CompareTag("Node")) {
+                if (hit.collider.gameObject == graphRenderer.graph.levels[graphRenderer.graph.levels.Count - 1][0].obj) {
+                    SceneManager.LoadScene("WinScene");
+                    PlayerPrefs.DeleteAll();
+                    return;
+                }
+
                 if (hit.collider.gameObject == targetNode) {
                     PlayerPrefs.SetInt("InitFuel", fuel);
                     PlayerPrefs.SetInt("InitTargetLevel", targetNode.GetComponent<NodeComponent>().level);

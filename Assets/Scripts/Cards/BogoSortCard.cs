@@ -12,11 +12,17 @@ public class BogoSortCard : Card
     [SerializeField] private int attackDamage;
     [SerializeField] private int energy;
     [SerializeField] private int defencePoints;
+    [SerializeField] private Sprite attackCard;
+    [SerializeField] private Sprite energyCard;
+    [SerializeField] private Sprite defenceCard;
+    [SerializeField] private Sprite rerollCard;
+    [SerializeField] private Sprite spreadCard;
     public override int GetStat()
     {
         return attackDamage;
     }
     public void playagain(Combatant combatant) {
+
         GameObject hand = GameObject.Find("FightController");
         FightController fightController = hand.GetComponent<FightController>();
         fightController.combatants[fightController.currentCombatant].playCard(this, combatant);

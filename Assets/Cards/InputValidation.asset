@@ -19,4 +19,4 @@ MonoBehaviour:
     in many forms such as checking it is the expected type. This card adds 1 defence
     point to the player.
   sound: {fileID: 8300000, guid: d65cc2d4cf03e194886344174ce068c0, type: 3}
-  defencePoints: 1
+  defencePoints: 4

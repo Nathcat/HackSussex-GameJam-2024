@@ -33,6 +33,11 @@ public abstract class Card : ScriptableObject
         return description;
     }
 
+    public AudioClip GetSound()
+    {
+        return sound;
+    }
+
     public abstract int GetStat();
     
     public abstract bool IsSelf();

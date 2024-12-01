@@ -22,6 +22,8 @@ public class AllAttackCard : Card
         for (int i = 1; i < combatants.Count; i++)
         {
             combatants[i].updateHealth(-attackDamage);
+            AudioSource.PlayClipAtPoint(GetSound(), combatant.transform.position);
+            CardAnimation.Play(GetIcon(), combatant.transform.position);
         }
     }
 

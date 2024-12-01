@@ -18,6 +18,8 @@ public class SiphonCard : Card
 
     public override void Play(Combatant combatant)
     {
+        AudioSource.PlayClipAtPoint(GetSound(), combatant.transform.position);
+        CardAnimation.Play(GetIcon(), combatant.transform.position);
         combatant.updateHealth(-damage);
         combatant.updateEnergy(energy);
     }

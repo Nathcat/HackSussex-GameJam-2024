@@ -20,13 +20,15 @@ public class NewHandCard : Card
         return true;
     }
 
-    protected override void Play(Combatant combatant)
+    public override void Play(Combatant combatant)
     {
         GameObject player = GameObject.Find("Player");
         GameObject hand = GameObject.Find("FightController");
         player.GetComponent<Combatant>().createDeck(hand.GetComponent<FightController>().playerCardSet, 7);
         GameObject bal = GameObject.Find("Hand(Clone)");
         bal.gameObject.GetComponent<HandOrganiser>().Generate(combatant.getDeck().ToList<Card>());
+        AudioSource.PlayClipAtPoint(GetSound(), combatant.transform.position);
+        CardAnimation.Play(GetIcon(), combatant.transform.position);
     }
 
 }

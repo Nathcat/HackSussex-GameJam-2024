@@ -17,6 +17,8 @@ public class DefendCard : Card
 
     public override void Play(Combatant combatant)
     {
+        AudioSource.PlayClipAtPoint(GetSound(), combatant.transform.position);
+        CardAnimation.Play(GetIcon(), combatant.transform.position);
         combatant.updateDefence(defencePoints);
     }
 

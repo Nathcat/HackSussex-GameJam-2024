@@ -15,8 +15,10 @@ public class AttackCard : Card
         return false;
     }
 
-    protected override void Play(Combatant combatant)
+    public override void Play(Combatant combatant)
     {
+        AudioSource.PlayClipAtPoint(GetSound(),combatant.transform.position);
+        CardAnimation.Play(GetIcon(), combatant.transform.position);
         combatant.updateHealth(-attackDamage);
     }
 

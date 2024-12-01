@@ -17,6 +17,11 @@ public class BogoSortCard : Card
     [SerializeField] private Sprite defenceCard;
     [SerializeField] private Sprite rerollCard;
     [SerializeField] private Sprite spreadCard;
+    [SerializeField] private AudioClip attackclip;
+    [SerializeField] private AudioClip energyclip;
+    [SerializeField] private AudioClip rerollclip;
+    [SerializeField] private AudioClip spreadclip;
+    [SerializeField] private AudioClip defenceclip;
     public override int GetStat()
     {
         return attackDamage;
@@ -32,7 +37,8 @@ public class BogoSortCard : Card
     {
         return false;
     }
-    protected override void Play(Combatant combatant)
+
+    public override void Play(Combatant combatant)
     {
         GameObject player = GameObject.Find("Player");
         if (player.GetComponent<Combatant>().getEnergy() != 0)
@@ -50,18 +56,27 @@ public class BogoSortCard : Card
             else if (random >= 10 && random < 40)
             {
                 combatant.updateHealth(-attackDamage);
-                playagain(combatant);
+                
+                AudioSource.PlayClipAtPoint(attackclip, combatant.transform.position);
+                CardAnimation.Play(attackCard, combatant.transform.position);
+                Util.RunAfter(1f,() => playagain(combatant));
             }
             else if (random >= 40 && random < 70)
             {
                 player.gameObject.GetComponent<Combatant>().updateDefence(defencePoints);
-                playagain(combatant);
+                
+                AudioSource.PlayClipAtPoint(defenceclip, player.transform.position);
+                CardAnimation.Play(defenceCard, player.transform.position);
+                Util.RunAfter(1f, () => playagain(combatant));
             }
             else if (random >= 70 && random < 80)
             {
                 player.gameObject.GetComponent<Combatant>().updateHealth(attackDamage / 2);
                 player.gameObject.GetComponent<Combatant>().updateEnergy(energy);
-                playagain(combatant);
+                
+                AudioSource.PlayClipAtPoint(energyclip, player.transform.position);
+                CardAnimation.Play(energyCard, player.transform.position);
+                Util.RunAfter(1f, () => playagain(combatant));
             }
             else if (random >= 80 && random < 90)
             {
@@ -69,6 +84,9 @@ public class BogoSortCard : Card
                 player.GetComponent<Combatant>().createDeck(hand.GetComponent<FightController>().playerCardSet,7);
                 GameObject bal = GameObject.Find("Hand(Clone)");
                 bal.gameObject.GetComponent<HandOrganiser>().Generate(player.gameObject.GetComponent<Combatant>().getDeck().ToList<Card>());
+                Util.RunAfter(1f, () => playagain(combatant));
+                AudioSource.PlayClipAtPoint(rerollclip, player.transform.position);
+                CardAnimation.Play(rerollCard, player.transform.position);
 
             }
             else if (random >= 90 && random <= 100)
@@ -77,10 +95,11 @@ public class BogoSortCard : Card
                 for (int i = 1; i < combatants.Count; i++)
                 {
                     combatants[i].updateHealth(-attackDamage);
-
+                    AudioSource.PlayClipAtPoint(attackclip, combatant.transform.position);
+                    CardAnimation.Play(attackCard, combatant.transform.position);
 
                 }
-                playagain(combatant);
+                Util.RunAfter(1f, () => playagain(combatant));
             }
         }
     }

@@ -10,13 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1d9237aa38d42304cb6c9fb163360842, type: 3}
-  m_Name: InputValidation
+  m_Name: Sandboxing
   m_EditorClassIdentifier: 
-  timeCost: 1
+  timeCost: 2
   icon: {fileID: 21300000, guid: a241a30c4bcdaae4aa21d9f4fdd04b52, type: 3}
-  title: 'Input Validation '
-  description: Inpuy validation is checking an input before using it. This can come
-    in many forms such as checking it is the expected type. This card adds 1 defence
-    point to the player.
+  title: Sandboxing
+  description: Runs the code in a emulated enviroment so that any malicious code
+    cant reach the real system. Gives the player 2 defence.
   sound: {fileID: 8300000, guid: d65cc2d4cf03e194886344174ce068c0, type: 3}
-  defencePoints: 1
+  defencePoints: 3

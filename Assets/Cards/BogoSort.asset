@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: BogoSort
   m_EditorClassIdentifier: 
   timeCost: 1
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: ea7ff7230c89f9246bd92711dacb5e95, type: 3}
   title: Bogo Sort
   description: Bogo sort works by making successive  permutations of its input until
     it finds one that is sorted. Does a random amount of random effects from all

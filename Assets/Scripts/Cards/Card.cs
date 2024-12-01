@@ -6,7 +6,6 @@ public abstract class Card : ScriptableObject
     [SerializeField] private int timeCost;
 
     // Display info
-    [SerializeField] private Sprite background;
     [SerializeField] private Sprite icon;
     [SerializeField] private string title;
     [SerializeField] private string description;
@@ -16,11 +15,6 @@ public abstract class Card : ScriptableObject
     public int GetTimeCost()
     {
         return timeCost;
-    }
-
-    public Sprite GetBackground()
-    {
-        return background;
     }
 
     public Sprite GetIcon()
